@@ -192,3 +192,10 @@ def test_savings_events_have_positive_impact(data):
     s = data["savings"]
     assert (s["annualized_impact"] > 0).all()
     assert (s["negotiated_price"] < s["baseline_price"]).all()
+
+
+def test_contracts_predate_history_except_new_vendor(cfg, data):
+    """Only the planted new (unbudgeted) vendor may start inside the history window."""
+    c = data["contracts"].merge(data["vendors"], on="vendor_id")
+    late = c[pd.to_datetime(c["start_date"]) > pd.Timestamp(cfg["scenario"]["history_start"])]
+    assert sorted(late["vendor_id"]) == data["manifest"]["unbudgeted_vendors"]

@@ -201,7 +201,7 @@ def generate(cfg: dict) -> dict:
         if v.start:
             start = date.fromisoformat(v.start)
         else:
-            start = add_months(end, -12 * int(rng.integers(2, 5))) + timedelta(days=1)
+            start = add_months(end, -12 * int(rng.integers(3, 6))) + timedelta(days=1)
         last_change = v.esc if v.last_change is None else v.last_change
 
         # Volumes per month.
