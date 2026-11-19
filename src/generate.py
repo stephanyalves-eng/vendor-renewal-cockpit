@@ -313,6 +313,7 @@ def generate(cfg: dict) -> dict:
     contracts_df = pd.DataFrame(contracts)
     contracts_df["seats_contracted"] = contracts_df["seats_contracted"].astype("Int64")
     spend_df = pd.DataFrame(spend_rows)
+    spend_df["seats_active"] = spend_df["seats_active"].astype("Int64")
     budget_df = pd.DataFrame(budget_rows)
 
     return dict(

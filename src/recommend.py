@@ -131,7 +131,10 @@ def recommend(data: dict, cfg: dict) -> pd.DataFrame:
             target_seats=target, consolidate_into=keeper if rule == "consolidate" else None,
             rationale=why,
         ))
-    return pd.DataFrame(rows).sort_values("decision_deadline").reset_index(drop=True)
+    out = pd.DataFrame(rows).sort_values("decision_deadline").reset_index(drop=True)
+    for col in ("peak_active_seats", "target_seats"):
+        out[col] = out[col].astype("Int64")
+    return out
 
 
 RECOMMENDATION_LABEL = {

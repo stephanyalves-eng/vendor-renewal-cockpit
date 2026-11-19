@@ -59,3 +59,13 @@ def test_dates_and_booleans_load_into_postgres_types(out):
     assert pd.to_datetime(c["end_date"], format="%Y-%m-%d").notna().all()
     s = pd.read_csv(out / "supabase" / "monthly_spend.csv")
     assert s["month"].str.fullmatch(r"\d{4}-\d{2}-01").all()
+
+
+def test_integer_columns_have_no_decimal_point(out):
+    """Postgres COPY rejects '93.0' for an integer column."""
+    checks = {"monthly_spend": ["seats_active"], "contracts": ["seats_contracted", "notice_days"],
+              "recommendations": ["peak_active_seats", "target_seats", "days_to_deadline"]}
+    for table, cols in checks.items():
+        df = pd.read_csv(out / "supabase" / f"{table}.csv", dtype=str)
+        for col in cols:
+            assert not df[col].dropna().str.contains(r"\.").any(), (table, col)
