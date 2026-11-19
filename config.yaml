@@ -1,0 +1,40 @@
+# Vendor Spend & Renewal Cockpit - scenario configuration.
+# Every number that drives the synthetic data, the forecast or a recommendation lives here.
+# All data produced from this file is SYNTHETIC.
+
+seed: 20261119
+
+scenario:
+  company: "Fictional fintech (synthetic)"
+  currency: BRL
+  anchor_date: 2026-11-30        # "today" in the scenario; November 2026 is the last closed month
+  history_start: 2025-06-01      # first month of actuals
+  history_end: 2026-11-01        # last month of actuals (18 months in total)
+  fiscal_year: 2026              # calendar fiscal year (Jan-Dec)
+  forecast_horizon_months: 12    # rolling forecast after the anchor month
+
+economics:
+  ipca_annual_pct: 4.5           # scenario assumption for Brazilian inflation, not an official figure
+  fx_usd_brl: 5.40               # scenario assumption, used only to convert USD list prices
+
+thresholds:
+  renewal_window_days: 120       # contracts ending within this many days get a recommendation
+  near_term_renewal_days: 90     # "renewals in the next 90 days" KPI
+  urgent_deadline_days: 30       # decision deadline closer than this is flagged as urgent
+  terminate_utilization_max: 0.20
+  rightsize_utilization_max: 0.60
+  rightsize_buffer_pct: 0.10     # right-size to peak active seats + this buffer
+  utilization_lookback_months: 3 # utilization = average active / contracted over this window
+  peak_lookback_months: 6        # peak active seats over this window
+  usage_trend_months: 6          # usage forecast: linear trend over this window
+  adoption_lookback_months: 3    # per-seat forecast: active seats / headcount over this window
+  headcount_trend_months: 6      # headcount projection: linear trend over this window
+  benchmark_tolerance_pct: 0.0   # price must exceed the public list price by more than this to flag
+
+generator:
+  n_vendors: 40
+  headcount_monthly_growth: 0.008
+  cloud_monthly_growth: 0.035
+  marketing_peak_months: [3, 11, 12]  # campaign and Black Friday season
+  marketing_peak_multiplier: 1.8
+  noise_sd: 0.04                 # relative noise on usage volumes
