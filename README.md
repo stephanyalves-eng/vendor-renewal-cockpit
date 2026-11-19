@@ -1,5 +1,7 @@
 # Vendor Spend & Renewal Cockpit
 
+[![tests](https://github.com/stephanyalves-eng/vendor-renewal-cockpit/actions/workflows/ci.yml/badge.svg)](https://github.com/stephanyalves-eng/vendor-renewal-cockpit/actions/workflows/ci.yml)
+
 > **Synthetic data.** Everything in this repository describes a fictional fintech and fictional
 > vendors, generated from a fixed random seed. The only real-world values are public list prices in
 > the benchmarks table, each with its source URL and the date it was checked.
