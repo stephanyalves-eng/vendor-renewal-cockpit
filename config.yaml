@@ -38,3 +38,4 @@ generator:
   marketing_peak_months: [3, 11, 12]  # campaign and Black Friday season
   marketing_peak_multiplier: 1.8
   noise_sd: 0.04                 # relative noise on usage volumes
+  budget_cloud_monthly_growth: 0.02   # the budget under-plans cloud growth, creating a volume variance

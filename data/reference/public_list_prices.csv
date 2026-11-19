@@ -1,0 +1,7 @@
+# REAL-WORLD DATA: public list prices only, checked on the official pricing page on the as_of date.
+# Prices may depend on region and change without notice. Unverifiable prices are left out on purpose.
+reference_product,capability,list_price,list_currency,billing_basis,source_url,as_of
+Zoom Workplace Pro,video_conferencing,14.16,USD,per user per month billed annually,https://zoom.us/pricing,2026-11-19
+DocuSign eSignature Standard,e_signature,105.00,BRL,per user per month billed annually,https://ecom.docusign.com/plans-and-pricing/esignature,2026-11-19
+GitHub Team,code_hosting,4.00,USD,per user per month,https://github.com/pricing,2026-11-19
+Google Workspace Business Standard,productivity_suite,81.80,BRL,per user per month with annual commitment,https://workspace.google.com/intl/pt-BR/pricing.html,2026-11-19
