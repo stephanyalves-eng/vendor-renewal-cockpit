@@ -13,7 +13,8 @@ questions a procurement lead gets asked every month:
 3. **Where can we cut or consolidate spend?** How much is each action worth?
 
 This repository is the data and logic layer. It produces the tables and SQL views that a web front end
-and a weekly alert e-mail read from (see [SPEC.md](SPEC.md) for the full architecture).
+and a weekly alert e-mail read from. The technical specification it was built against is in
+[SPEC.md](SPEC.md) (in Portuguese).
 
 ## Key findings from the synthetic run
 
