@@ -111,7 +111,8 @@ config.yaml → generate → forecast → variance ─┐
 | Recommend | [src/recommend.py](src/recommend.py) | Terminate → consolidate → right-size → renegotiate → renew, first match wins, with a decision deadline |
 | Contracts | [src/contracts_pdf.py](src/contracts_pdf.py) | Three sample contract PDFs for the front end's AI intake demo |
 | Export | [src/export.py](src/export.py) | Runs everything, writes CSVs and PDFs |
-| Schema | [sql/schema.sql](sql/schema.sql) | Tables plus `v_fy_landing`, `v_fy_landing_by_category` and `v_renewals_due` |
+| Schema | [sql/schema.sql](sql/schema.sql) | Tables plus one view per front-end need: `v_kpis`, `v_fy_landing`, `v_fy_landing_by_category`, `v_monthly_trend`, `v_variance_waterfall`, `v_renewals_due`, `v_vendor_detail`, `v_seat_utilization` |
+| Access | [sql/supabase_policies.sql](sql/supabase_policies.sql) | Supabase only: visitors read; only listed admins can change a contract status or store a contract extraction |
 
 Every rule is explained in plain business language in [docs/methodology.md](docs/methodology.md). All
 thresholds, the scenario date, the seed and the IPCA rate live in [config.yaml](config.yaml).
@@ -142,14 +143,18 @@ The export writes:
 - `data/supabase/`: the same files without the comment line, ready for Postgres `COPY`.
 - `data/contracts/`: three sample contract PDFs.
 
-To load the database, run `sql/schema.sql`, then `sql/load.sql` with `psql` from the repository root. In
-the Supabase dashboard, you can instead import the files from `data/supabase/` in the order the tables are
-created.
+To load the database, run `sql/schema.sql`, then `sql/load.sql` with `psql` from the repository root, and
+on Supabase also `sql/supabase_policies.sql`. In the Supabase dashboard, you can instead import the files
+from `data/supabase/` in the order the tables are created.
+
+The front end is built in Lovable from the prompts in [docs/lovable/](docs/lovable/README.md), which also
+explain how the public demo is kept from spending credits.
 
 Same seed, same output: the test suite checks that the data and the CSV files are byte-for-byte reproducible.
 
 **Database check.** [scripts/pg_check.sh](scripts/pg_check.sh) builds the database in a real Postgres from
-`schema.sql` and loads every row of every CSV. It then saves the three views to files, and
+`schema.sql` and loads every row of every CSV. It applies the Supabase access rules against stand-ins for Supabase's roles and proves that visitors
+cannot write. It then saves every view to a file, and
 [tests/test_postgres.py](tests/test_postgres.py) checks them against the Python figures to the cent.
 GitHub Actions runs it on every push, against Postgres 17
 ([.github/workflows/ci.yml](.github/workflows/ci.yml)). The same workflow fails if the committed CSVs no

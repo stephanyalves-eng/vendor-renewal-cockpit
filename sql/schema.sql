@@ -165,6 +165,31 @@ create table recommendations (
     check (rule in ('terminate', 'consolidate', 'right_size', 'renegotiate', 'renew'))
 );
 
+-- Written by the app, not loaded from CSV ----------------------------------------------------
+
+-- Fields an AI step extracted from an uploaded contract PDF. Visitors see stored results from a
+-- real run; only the owner can run a new extraction (see sql/supabase_policies.sql).
+create table contract_extractions (
+    extraction_id bigint generated always as identity primary key,
+    contract_id text references contracts (contract_id),
+    file_name text not null,
+    field text not null,
+    extracted_value text,
+    confidence numeric(4,3),
+    uncertain boolean not null default false,
+    model text,
+    extracted_at timestamptz not null default now(),
+    check (field in ('end_date', 'auto_renew', 'notice_days', 'price_escalator_pct', 'termination_fee')),
+    check (confidence is null or confidence between 0 and 1)
+);
+
+-- Signed-in users allowed to write (contract status, new extractions). Rows are added by hand
+-- in the database, never from the app or this repository.
+create table app_admins (
+    user_id uuid primary key,
+    added_at timestamptz not null default now()
+);
+
 -- ---------------------------------------------------------------------------------------------
 -- Views for the front end
 -- ---------------------------------------------------------------------------------------------
@@ -266,9 +291,128 @@ where c.status <> 'terminated'
   and c.end_date - s.anchor_date between 1 and s.renewal_window_days
 order by decision_deadline;
 
+-- One-row KPI strip for the Overview page.
+-- value_at_risk_auto_renewal: annual value of auto-renewing contracts in the renewal window whose
+-- recommendation is anything but "renew" - money that rolls over on today's terms if nobody acts.
+create or replace view v_kpis with (security_invoker = true) as
+with s as (
+    select anchor_date, fiscal_year, near_term_renewal_days, urgent_deadline_days
+    from scenario where scenario_id = 1
+),
+landing as (
+    select sum(landing) as fy_landing, sum(budget_fy) as fy_budget from v_fy_landing
+),
+sav as (
+    select
+        coalesce(sum(sv.annualized_impact) filter (where sv.type = 'saving'), 0) as savings_ytd,
+        coalesce(sum(sv.annualized_impact) filter (where sv.type = 'cost_avoidance'), 0) as cost_avoidance_ytd
+    from savings sv cross join s
+    where extract(year from sv.date) = s.fiscal_year and sv.date <= s.anchor_date
+),
+ren as (
+    select
+        count(*) filter (where r.days_to_end <= s.near_term_renewal_days) as renewals_next_90_days,
+        count(*) filter (where r.urgent) as urgent_decisions,
+        coalesce(sum(r.annual_value) filter (where r.auto_renew and r.rule <> 'renew'), 0) as value_at_risk_auto_renewal,
+        coalesce(sum(r.estimated_annual_impact), 0) as recommended_annual_impact
+    from v_renewals_due r cross join s
+)
+select
+    s.fiscal_year,
+    s.anchor_date,
+    landing.fy_landing,
+    landing.fy_budget,
+    landing.fy_landing - landing.fy_budget as landing_vs_budget,
+    (landing.fy_landing - landing.fy_budget) / nullif(landing.fy_budget, 0) as landing_vs_budget_pct,
+    sav.savings_ytd,
+    sav.cost_avoidance_ytd,
+    ren.renewals_next_90_days,
+    ren.urgent_decisions,
+    ren.value_at_risk_auto_renewal,
+    ren.recommended_annual_impact
+from s cross join landing cross join sav cross join ren;
+
+-- Monthly actuals, budget and forecast by category and department (Budget vs. actual chart).
+-- A column is null where that series has no value: no forecast for closed months, no actuals ahead.
+create or replace view v_monthly_trend with (security_invoker = true) as
+select month, category, owner_department,
+       sum(actual) as actual, sum(budget) as budget, sum(forecast) as forecast
+from (
+    select m.month, v.category, v.owner_department, m.actual_amount as actual,
+           null::numeric as budget, null::numeric as forecast
+    from monthly_spend m join vendors v on v.vendor_id = m.vendor_id
+    union all
+    select b.month, v.category, v.owner_department, null, b.budget_amount, null
+    from budget b join vendors v on v.vendor_id = b.vendor_id
+    union all
+    select f.month, v.category, v.owner_department, null, null, f.forecast_amount
+    from forecast_monthly f join vendors v on v.vendor_id = f.vendor_id
+) series
+group by month, category, owner_department;
+
+-- Budget-to-landing waterfall steps by category and department; the app sums the filtered rows.
+-- budget + price + volume + unbudgeted = landing, to the cent.
+create or replace view v_variance_waterfall with (security_invoker = true) as
+select fiscal_year, scope, category, owner_department,
+       sum(budget_amount) as budget,
+       sum(price_var) as price,
+       sum(volume_var) as volume,
+       sum(unbudgeted_var) as unbudgeted,
+       sum(actual_amount) as landing
+from variance
+group by fiscal_year, scope, category, owner_department;
+
+-- Active vs. contracted seats per month for per-seat contracts (Vendor detail chart).
+create or replace view v_seat_utilization with (security_invoker = true) as
+select m.month, m.vendor_id, m.contract_id, m.seats_active, c.seats_contracted,
+       m.seats_active::numeric / nullif(c.seats_contracted, 0) as utilization
+from monthly_spend m
+join contracts c on c.contract_id = m.contract_id
+where c.billing_model = 'per_seat';
+
+-- Everything the Vendor detail page shows, one row per vendor.
+create or replace view v_vendor_detail with (security_invoker = true) as
+with s as (
+    select anchor_date, renewal_window_days from scenario where scenario_id = 1
+),
+util as (
+    select u.contract_id, avg(u.seats_active)::numeric / max(u.seats_contracted) as utilization_3m
+    from v_seat_utilization u cross join s
+    where u.month > s.anchor_date - interval '3 months'
+    group by u.contract_id
+)
+select
+    v.vendor_id, v.name as vendor_name, v.category, v.capability, v.owner_department,
+    v.criticality, v.risk_tier,
+    c.contract_id, c.start_date, c.end_date, c.auto_renew, c.notice_days,
+    c.end_date - c.notice_days as decision_deadline,
+    c.billing_model, c.unit_price, c.seats_contracted, c.annual_value,
+    c.price_escalator_pct, c.termination_fee, c.status,
+    util.utilization_3m,
+    b.reference_product as benchmark_product,
+    b.list_price_per_seat as benchmark_price_per_seat,
+    b.source_url as benchmark_source_url,
+    b.as_of as benchmark_as_of,
+    c.unit_price / nullif(b.list_price_per_seat, 0) - 1 as price_vs_benchmark_pct,
+    l.landing as fy_landing,
+    l.budget_fy as fy_budget,
+    r.recommendation,
+    r.estimated_annual_impact,
+    coalesce(r.rationale,
+             case when c.status = 'terminated' then 'Contract terminated; no renewal decision.'
+                  else 'Renews on ' || to_char(c.end_date, 'YYYY-MM-DD') || ', outside the '
+                       || s.renewal_window_days || '-day review window.' end) as rule_explanation
+from vendors v
+join contracts c on c.vendor_id = v.vendor_id
+cross join s
+left join util on util.contract_id = c.contract_id
+left join benchmarks b on b.vendor_id = v.vendor_id
+left join v_fy_landing l on l.vendor_id = v.vendor_id
+left join recommendations r on r.contract_id = c.contract_id;
+
 -- ---------------------------------------------------------------------------------------------
--- Read-only public demo: anyone may read; only contracts.status is meant to be edited in the app
--- (add an update policy for it once authentication is decided).
+-- Read-only public demo: anyone may read. Writes (contract status, new extractions) are limited
+-- to the owner by sql/supabase_policies.sql, which uses Supabase's auth schema and roles.
 -- ---------------------------------------------------------------------------------------------
 
 alter table scenario enable row level security;
@@ -294,3 +438,7 @@ create policy "public read" on savings for select using (true);
 create policy "public read" on forecast_monthly for select using (true);
 create policy "public read" on variance for select using (true);
 create policy "public read" on recommendations for select using (true);
+
+alter table contract_extractions enable row level security;
+alter table app_admins enable row level security;   -- no public policy: nobody can list admins
+create policy "public read" on contract_extractions for select using (true);

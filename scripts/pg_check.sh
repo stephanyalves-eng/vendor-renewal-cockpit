@@ -11,13 +11,21 @@ PSQL=(psql -X -q -v ON_ERROR_STOP=1)
 export PGOPTIONS="-c client_min_messages=warning"
 
 # Start clean so the script can be re-run: drop only the cockpit's own objects, nothing else.
-"${PSQL[@]}" -c "drop view if exists v_renewals_due, v_fy_landing_by_category, v_fy_landing;
-  drop table if exists recommendations, variance, forecast_monthly, savings, benchmarks, headcount,
-    budget, monthly_spend, contracts, vendors, scenario;"
+"${PSQL[@]}" -c "drop view if exists v_vendor_detail, v_seat_utilization, v_variance_waterfall,
+    v_monthly_trend, v_kpis, v_renewals_due, v_fy_landing_by_category, v_fy_landing;
+  drop table if exists contract_extractions, app_admins, recommendations, variance, forecast_monthly,
+    savings, benchmarks, headcount, budget, monthly_spend, contracts, vendors, scenario;"
 "${PSQL[@]}" -f sql/schema.sql
 "${PSQL[@]}" -f sql/load.sql
 
-for view in v_fy_landing v_fy_landing_by_category v_renewals_due; do
+# Supabase write rules, tested against stand-ins for Supabase's roles and auth.uid().
+"${PSQL[@]}" -f scripts/ci_supabase_stubs.sql
+"${PSQL[@]}" -f sql/supabase_policies.sql
+psql -X -v ON_ERROR_STOP=1 -f scripts/ci_policy_check.sql | grep "Policy check"
+
+VIEWS=(v_fy_landing v_fy_landing_by_category v_renewals_due v_kpis v_monthly_trend
+       v_variance_waterfall v_seat_utilization v_vendor_detail)
+for view in "${VIEWS[@]}"; do
   "${PSQL[@]}" -c "\copy (select * from $view) to '$OUT/$view.csv' with (format csv, header true)"
 done
 
