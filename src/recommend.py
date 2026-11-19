@@ -103,7 +103,7 @@ def recommend(data: dict, cfg: dict) -> pd.DataFrame:
                     if c.unit_price > list_price * (1 + th["benchmark_tolerance_pct"]):
                         gaps.append(((c.unit_price - list_price) * c.seats_contracted * 12,
                                      f"pays {c.unit_price:.2f} per seat vs. public list price {list_price:.2f} "
-                                     f"({bench.loc[c.vendor_id, 'reference_product']})"))
+                                     f"(see benchmarks table)"))
                 if c.price_escalator_pct > ipca:
                     gaps.append((c.annual_value * (c.price_escalator_pct - ipca) / 100,
                                  f"escalator of {c.price_escalator_pct:.1f}% vs. IPCA of {ipca:.1f}%"))

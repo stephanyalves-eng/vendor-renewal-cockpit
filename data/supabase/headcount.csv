@@ -1,0 +1,181 @@
+month,department,headcount
+2025-06-01,Engineering,180
+2025-07-01,Engineering,180
+2025-08-01,Engineering,182
+2025-09-01,Engineering,183
+2025-10-01,Engineering,184
+2025-11-01,Engineering,185
+2025-12-01,Engineering,186
+2026-01-01,Engineering,188
+2026-02-01,Engineering,190
+2026-03-01,Engineering,192
+2026-04-01,Engineering,192
+2026-05-01,Engineering,194
+2026-06-01,Engineering,195
+2026-07-01,Engineering,195
+2026-08-01,Engineering,194
+2026-09-01,Engineering,196
+2026-10-01,Engineering,198
+2026-11-01,Engineering,199
+2025-06-01,Product,40
+2025-07-01,Product,40
+2025-08-01,Product,41
+2025-09-01,Product,41
+2025-10-01,Product,41
+2025-11-01,Product,42
+2025-12-01,Product,42
+2026-01-01,Product,43
+2026-02-01,Product,43
+2026-03-01,Product,44
+2026-04-01,Product,44
+2026-05-01,Product,44
+2026-06-01,Product,44
+2026-07-01,Product,45
+2026-08-01,Product,45
+2026-09-01,Product,45
+2026-10-01,Product,46
+2026-11-01,Product,46
+2025-06-01,Sales,90
+2025-07-01,Sales,91
+2025-08-01,Sales,92
+2025-09-01,Sales,93
+2025-10-01,Sales,93
+2025-11-01,Sales,94
+2025-12-01,Sales,95
+2026-01-01,Sales,96
+2026-02-01,Sales,97
+2026-03-01,Sales,98
+2026-04-01,Sales,98
+2026-05-01,Sales,99
+2026-06-01,Sales,100
+2026-07-01,Sales,101
+2026-08-01,Sales,102
+2026-09-01,Sales,102
+2026-10-01,Sales,102
+2026-11-01,Sales,102
+2025-06-01,Marketing,35
+2025-07-01,Marketing,35
+2025-08-01,Marketing,35
+2025-09-01,Marketing,36
+2025-10-01,Marketing,36
+2025-11-01,Marketing,36
+2025-12-01,Marketing,37
+2026-01-01,Marketing,37
+2026-02-01,Marketing,37
+2026-03-01,Marketing,37
+2026-04-01,Marketing,38
+2026-05-01,Marketing,38
+2026-06-01,Marketing,39
+2026-07-01,Marketing,39
+2026-08-01,Marketing,39
+2026-09-01,Marketing,40
+2026-10-01,Marketing,40
+2026-11-01,Marketing,40
+2025-06-01,Customer Support,110
+2025-07-01,Customer Support,111
+2025-08-01,Customer Support,111
+2025-09-01,Customer Support,113
+2025-10-01,Customer Support,113
+2025-11-01,Customer Support,115
+2025-12-01,Customer Support,116
+2026-01-01,Customer Support,117
+2026-02-01,Customer Support,117
+2026-03-01,Customer Support,119
+2026-04-01,Customer Support,119
+2026-05-01,Customer Support,120
+2026-06-01,Customer Support,122
+2026-07-01,Customer Support,122
+2026-08-01,Customer Support,123
+2026-09-01,Customer Support,124
+2026-10-01,Customer Support,125
+2026-11-01,Customer Support,126
+2025-06-01,Finance,30
+2025-07-01,Finance,30
+2025-08-01,Finance,31
+2025-09-01,Finance,31
+2025-10-01,Finance,31
+2025-11-01,Finance,31
+2025-12-01,Finance,32
+2026-01-01,Finance,32
+2026-02-01,Finance,33
+2026-03-01,Finance,33
+2026-04-01,Finance,33
+2026-05-01,Finance,33
+2026-06-01,Finance,34
+2026-07-01,Finance,34
+2026-08-01,Finance,34
+2026-09-01,Finance,35
+2026-10-01,Finance,35
+2026-11-01,Finance,35
+2025-06-01,People,20
+2025-07-01,People,20
+2025-08-01,People,20
+2025-09-01,People,21
+2025-10-01,People,21
+2025-11-01,People,21
+2025-12-01,People,21
+2026-01-01,People,21
+2026-02-01,People,21
+2026-03-01,People,22
+2026-04-01,People,22
+2026-05-01,People,22
+2026-06-01,People,22
+2026-07-01,People,23
+2026-08-01,People,23
+2026-09-01,People,23
+2026-10-01,People,23
+2026-11-01,People,23
+2025-06-01,Legal,12
+2025-07-01,Legal,12
+2025-08-01,Legal,12
+2025-09-01,Legal,12
+2025-10-01,Legal,12
+2025-11-01,Legal,12
+2025-12-01,Legal,13
+2026-01-01,Legal,13
+2026-02-01,Legal,13
+2026-03-01,Legal,13
+2026-04-01,Legal,13
+2026-05-01,Legal,13
+2026-06-01,Legal,13
+2026-07-01,Legal,13
+2026-08-01,Legal,13
+2026-09-01,Legal,14
+2026-10-01,Legal,14
+2026-11-01,Legal,14
+2025-06-01,Operations,60
+2025-07-01,Operations,60
+2025-08-01,Operations,61
+2025-09-01,Operations,61
+2025-10-01,Operations,62
+2025-11-01,Operations,62
+2025-12-01,Operations,63
+2026-01-01,Operations,63
+2026-02-01,Operations,64
+2026-03-01,Operations,65
+2026-04-01,Operations,65
+2026-05-01,Operations,66
+2026-06-01,Operations,67
+2026-07-01,Operations,67
+2026-08-01,Operations,68
+2026-09-01,Operations,68
+2026-10-01,Operations,68
+2026-11-01,Operations,69
+2025-06-01,IT,25
+2025-07-01,IT,25
+2025-08-01,IT,25
+2025-09-01,IT,26
+2025-10-01,IT,26
+2025-11-01,IT,26
+2025-12-01,IT,26
+2026-01-01,IT,27
+2026-02-01,IT,27
+2026-03-01,IT,27
+2026-04-01,IT,27
+2026-05-01,IT,27
+2026-06-01,IT,27
+2026-07-01,IT,28
+2026-08-01,IT,28
+2026-09-01,IT,28
+2026-10-01,IT,28
+2026-11-01,IT,28

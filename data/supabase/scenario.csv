@@ -1,0 +1,2 @@
+scenario_id,anchor_date,fiscal_year,currency,ipca_annual_pct,renewal_window_days,near_term_renewal_days,urgent_deadline_days,seed
+1,2026-11-30,2026,BRL,4.5,120,90,30,20261119

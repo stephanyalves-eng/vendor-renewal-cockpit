@@ -1,0 +1,41 @@
+vendor_id,name,category,capability,owner_department,criticality,risk_tier
+V001,Confera,SaaS,video_conferencing,IT,high,medium
+V002,MeetLoop,SaaS,video_conferencing,Sales,medium,low
+V003,Vidmo,SaaS,video_conferencing,Customer Support,medium,low
+V004,Signet,SaaS,e_signature,Legal,medium,medium
+V005,InkPact,SaaS,e_signature,Sales,medium,low
+V006,Taskhive,SaaS,work_management,Product,medium,low
+V007,Planora,SaaS,work_management,Operations,medium,low
+V008,Relaychat,SaaS,team_chat,IT,high,medium
+V009,Codeforge,SaaS,code_hosting,Engineering,high,high
+V010,Pixelcraft,SaaS,design_tools,Product,medium,low
+V011,Ledgerly,SaaS,expense_management,IT,medium,medium
+V012,PeopleFlow,SaaS,hris,IT,high,high
+V013,Dealstream,SaaS,crm,Sales,high,high
+V014,Helpdeskly,SaaS,support_desk,Customer Support,high,medium
+V015,Wikinest,SaaS,knowledge_base,IT,low,low
+V016,Workwell Suite,SaaS,productivity_suite,IT,high,medium
+V017,Formwise,SaaS,surveys,Marketing,low,low
+V018,Learnly,SaaS,learning_platform,IT,low,low
+V019,Contractly,SaaS,contract_management,Operations,medium,medium
+V020,Analytiq,SaaS,bi_dashboards,Finance,medium,low
+V021,Promptly,SaaS,ai_assistant,Engineering,medium,medium
+V022,Recruitly,SaaS,recruiting_ats,People,medium,low
+V023,Nimbus Compute,Cloud,cloud_compute,Engineering,high,high
+V024,Stratus Storage,Cloud,object_storage,Engineering,high,medium
+V025,Pulsewire,Cloud,cdn,Engineering,medium,medium
+V026,Querybase,Cloud,managed_database,Engineering,high,high
+V027,Adreach,Marketing,paid_social,Marketing,medium,low
+V028,Searchlift,Marketing,paid_search,Marketing,medium,low
+V029,Mailbloom,Marketing,email_marketing,Marketing,medium,low
+V030,Brandwave Studio,Marketing,creative_agency,Marketing,low,low
+V031,Eventura,Marketing,events,Marketing,low,low
+V032,Ardent Legal Partners,Professional services,legal_counsel,Legal,high,medium
+V033,Calder & Reis Auditores,Professional services,external_audit,Finance,high,medium
+V034,Talentbridge Consulting,Professional services,recruiting_agency,People,low,low
+V035,Kestrel Advisory,Professional services,strategy_consulting,Operations,medium,low
+V036,Folha Certa Payroll,Professional services,payroll_services,People,high,high
+V037,Sentinela Security,Data and security,endpoint_security,IT,high,high
+V038,Riskwatch KYC,Data and security,kyc_verification,Operations,high,high
+V039,Logline,Data and security,log_monitoring,Engineering,high,medium
+V040,Credscore Data,Data and security,credit_bureau_data,Operations,high,high

@@ -1,0 +1,230 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document (opensource)
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R /F3 4 0 R /F4 5 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F3 /Subtype /Type1 /Type /Font
+>>
+endobj
+5 0 obj
+<<
+/BaseFont /Helvetica-BoldOblique /Encoding /WinAnsiEncoding /Name /F4 /Subtype /Type1 /Type /Font
+>>
+endobj
+6 0 obj
+<<
+/Contents 10 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 9 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+7 0 obj
+<<
+/PageMode /UseNone /Pages 9 0 R /Type /Catalog
+>>
+endobj
+8 0 obj
+<<
+/Author (Synthetic data generator) /CreationDate (D:20000101000000+00'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20000101000000+00'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (\(unspecified\)) /Title (Supplier agreement C016 \(synthetic\)) /Trapped /False
+>>
+endobj
+9 0 obj
+<<
+/Count 1 /Kids [ 6 0 R ] /Type /Pages
+>>
+endobj
+10 0 obj
+<<
+/Length 2993
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 68.3622 751.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (SYNTHETIC SAMPLE CONTRACT - fictional parties, for demonstration only) Tj T* ET
+Q
+Q
+q
+1 0 0 1 68.3622 743.3858 cm
+Q
+q
+1 0 0 1 68.3622 721.3858 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4 Tm /F3 18 Tf 22 TL 11.70959 0 Td (Software and Services Agreement - Workwell Suite) Tj T* -11.70959 0 Td ET
+Q
+Q
+q
+1 0 0 1 68.3622 704.0472 cm
+Q
+q
+1 0 0 1 68.3622 678.0472 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 12 Tf 14 TL (1. Parties) Tj T* ET
+Q
+Q
+q
+1 0 0 1 68.3622 648.0472 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL (Buyer: Aurora Pay Instituicao de Pagamento S.A. \(fictional fintech\). Supplier: Workwell Suite \(fictional) Tj T* (supplier\). Contract reference: C016.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 68.3622 622.0472 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 12 Tf 14 TL (2. Scope) Tj T* ET
+Q
+Q
+q
+1 0 0 1 68.3622 604.0472 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Provision of productivity suite services \(SaaS\) to the Buyer's IT team.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 68.3622 578.0472 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 12 Tf 14 TL (3. Term) Tj T* ET
+Q
+Q
+q
+1 0 0 1 68.3622 560.0472 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Start date: 2023-03-27. End date: 2027-03-26. Renewal term: 12 months.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 68.3622 534.0472 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 12 Tf 14 TL (4. Renewal) Tj T* ET
+Q
+Q
+q
+1 0 0 1 68.3622 504.0472 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL (Auto-renewal: No. Notice period: 60 days before the end date. The agreement expires unless both) Tj T* (parties sign a renewal.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 68.3622 478.0472 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 12 Tf 14 TL (5. Fees) Tj T* ET
+Q
+Q
+q
+1 0 0 1 68.3622 448.0472 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL (Billing model: per_seat. Unit price: BRL 102.25 per month \(749 seats\). Annual contract value: BRL) Tj T* (919,023.00. Invoiced monthly.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 68.3622 422.0472 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 12 Tf 14 TL (6. Price adjustment) Tj T* ET
+Q
+Q
+q
+1 0 0 1 68.3622 404.0472 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Price escalator: 4.0% applied to all fees at each renewal.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 68.3622 378.0472 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 12 Tf 14 TL (7. Termination) Tj T* ET
+Q
+Q
+q
+1 0 0 1 68.3622 348.0472 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL (Early termination fee: BRL 229,755.75, payable if the Buyer terminates before the end date for) Tj T* (convenience.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 68.3622 322.0472 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 12 Tf 14 TL (8. Governing law) Tj T* ET
+Q
+Q
+q
+1 0 0 1 68.3622 304.0472 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Laws of the Federative Republic of Brazil. Courts of Sao Paulo, SP.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 68.3622 275.7008 cm
+Q
+q
+1 0 0 1 68.3622 257.7008 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Signed for the Buyer: Head of Procurement. Signed for the Supplier: Account Director.) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+xref
+0 11
+0000000000 65535 f 
+0000000061 00000 n 
+0000000122 00000 n 
+0000000229 00000 n 
+0000000344 00000 n 
+0000000456 00000 n 
+0000000575 00000 n 
+0000000779 00000 n 
+0000000847 00000 n 
+0000001162 00000 n 
+0000001221 00000 n 
+trailer
+<<
+/ID 
+[<bcde250e1cef2dcd1ef98b35ac4cfd79><bcde250e1cef2dcd1ef98b35ac4cfd79>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 8 0 R
+/Root 7 0 R
+/Size 11
+>>
+startxref
+4266
+%%EOF

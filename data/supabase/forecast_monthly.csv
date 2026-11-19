@@ -1,0 +1,469 @@
+month,vendor_id,contract_id,billing_model,forecast_qty,forecast_unit_price,forecast_amount,method
+2026-12-01,V001,C001,per_seat,736.0,70.0,51520.0,"seats = headcount x adoption 95%, min contracted 736"
+2027-01-01,V001,C001,per_seat,736.0,70.0,51520.0,"seats = headcount x adoption 95%, min contracted 736"
+2027-02-01,V001,C001,per_seat,736.0,70.0,51520.0,"seats = headcount x adoption 95%, min contracted 736"
+2027-03-01,V001,C001,per_seat,736.0,70.0,51520.0,"seats = headcount x adoption 95%, min contracted 736"
+2027-04-01,V001,C001,per_seat,736.0,70.0,51520.0,"seats = headcount x adoption 95%, min contracted 736"
+2027-05-01,V001,C001,per_seat,736.0,70.0,51520.0,"seats = headcount x adoption 95%, min contracted 736"
+2027-06-01,V001,C001,per_seat,736.0,70.0,51520.0,"seats = headcount x adoption 95%, min contracted 736"
+2027-07-01,V001,C001,per_seat,736.0,70.0,51520.0,"seats = headcount x adoption 95%, min contracted 736"
+2027-08-01,V001,C001,per_seat,736.0,70.0,51520.0,"seats = headcount x adoption 95%, min contracted 736"
+2027-09-01,V001,C001,per_seat,736.0,70.0,51520.0,"seats = headcount x adoption 95%, min contracted 736"
+2027-10-01,V001,C001,per_seat,736.0,70.0,51520.0,"seats = headcount x adoption 95%, min contracted 736"
+2027-11-01,V001,C001,per_seat,736.0,70.0,51520.0,"seats = headcount x adoption 95%, min contracted 736"
+2026-12-01,V002,C002,per_seat,131.0,72.0,9432.0,"seats = headcount x adoption 86%, min contracted 131"
+2027-01-01,V002,C002,per_seat,131.0,72.0,9432.0,"seats = headcount x adoption 86%, min contracted 131"
+2027-02-01,V002,C002,per_seat,131.0,72.0,9432.0,"seats = headcount x adoption 86%, min contracted 131"
+2027-03-01,V002,C002,per_seat,131.0,72.0,9432.0,"seats = headcount x adoption 86%, min contracted 131"
+2027-04-01,V002,C002,per_seat,131.0,74.88,9809.28,"seats = headcount x adoption 86%, min contracted 131"
+2027-05-01,V002,C002,per_seat,131.0,74.88,9809.28,"seats = headcount x adoption 86%, min contracted 131"
+2027-06-01,V002,C002,per_seat,131.0,74.88,9809.28,"seats = headcount x adoption 86%, min contracted 131"
+2027-07-01,V002,C002,per_seat,131.0,74.88,9809.28,"seats = headcount x adoption 86%, min contracted 131"
+2027-08-01,V002,C002,per_seat,131.0,74.88,9809.28,"seats = headcount x adoption 86%, min contracted 131"
+2027-09-01,V002,C002,per_seat,131.0,74.88,9809.28,"seats = headcount x adoption 86%, min contracted 131"
+2027-10-01,V002,C002,per_seat,131.0,74.88,9809.28,"seats = headcount x adoption 86%, min contracted 131"
+2027-11-01,V002,C002,per_seat,131.0,74.88,9809.28,"seats = headcount x adoption 86%, min contracted 131"
+2026-12-01,V003,C003,per_seat,130.0,78.0,10140.0,"seats = headcount x adoption 70%, min contracted 130"
+2027-01-01,V003,C003,per_seat,130.0,78.0,10140.0,"seats = headcount x adoption 70%, min contracted 130"
+2027-02-01,V003,C003,per_seat,130.0,78.0,10140.0,"seats = headcount x adoption 70%, min contracted 130"
+2027-03-01,V003,C003,per_seat,130.0,80.34,10444.2,"seats = headcount x adoption 70%, min contracted 130"
+2027-04-01,V003,C003,per_seat,130.0,80.34,10444.2,"seats = headcount x adoption 70%, min contracted 130"
+2027-05-01,V003,C003,per_seat,130.0,80.34,10444.2,"seats = headcount x adoption 70%, min contracted 130"
+2027-06-01,V003,C003,per_seat,130.0,80.34,10444.2,"seats = headcount x adoption 70%, min contracted 130"
+2027-07-01,V003,C003,per_seat,130.0,80.34,10444.2,"seats = headcount x adoption 70%, min contracted 130"
+2027-08-01,V003,C003,per_seat,130.0,80.34,10444.2,"seats = headcount x adoption 70%, min contracted 130"
+2027-09-01,V003,C003,per_seat,130.0,80.34,10444.2,"seats = headcount x adoption 70%, min contracted 130"
+2027-10-01,V003,C003,per_seat,130.0,80.34,10444.2,"seats = headcount x adoption 70%, min contracted 130"
+2027-11-01,V003,C003,per_seat,130.0,80.34,10444.2,"seats = headcount x adoption 70%, min contracted 130"
+2026-12-01,V004,C004,per_seat,14.0,98.0,1372.0,"seats = headcount x adoption 88%, min contracted 14"
+2027-01-01,V004,C004,per_seat,14.0,98.0,1372.0,"seats = headcount x adoption 88%, min contracted 14"
+2027-02-01,V004,C004,per_seat,14.0,98.0,1372.0,"seats = headcount x adoption 88%, min contracted 14"
+2027-03-01,V004,C004,per_seat,14.0,98.0,1372.0,"seats = headcount x adoption 88%, min contracted 14"
+2027-04-01,V004,C004,per_seat,14.0,98.0,1372.0,"seats = headcount x adoption 88%, min contracted 14"
+2027-05-01,V004,C004,per_seat,14.0,98.0,1372.0,"seats = headcount x adoption 88%, min contracted 14"
+2027-06-01,V004,C004,per_seat,15.0,98.0,1470.0,"seats = headcount x adoption 88%, min contracted 14"
+2027-07-01,V004,C004,per_seat,15.0,98.0,1470.0,"seats = headcount x adoption 88%, min contracted 14"
+2027-08-01,V004,C004,per_seat,15.0,101.92,1528.8,"seats = headcount x adoption 88%, min contracted 14"
+2027-09-01,V004,C004,per_seat,15.0,101.92,1528.8,"seats = headcount x adoption 88%, min contracted 14"
+2027-10-01,V004,C004,per_seat,15.0,101.92,1528.8,"seats = headcount x adoption 88%, min contracted 14"
+2027-11-01,V004,C004,per_seat,16.0,101.92,1630.72,"seats = headcount x adoption 88%, min contracted 14"
+2026-12-01,V005,C005,per_seat,58.0,110.0,6380.0,"seats = headcount x adoption 40%, min contracted 58"
+2027-01-01,V005,C005,per_seat,58.0,110.0,6380.0,"seats = headcount x adoption 40%, min contracted 58"
+2027-02-01,V005,C005,per_seat,58.0,110.0,6380.0,"seats = headcount x adoption 40%, min contracted 58"
+2027-03-01,V005,C005,per_seat,58.0,110.0,6380.0,"seats = headcount x adoption 40%, min contracted 58"
+2027-04-01,V005,C005,per_seat,58.0,114.95,6667.1,"seats = headcount x adoption 40%, min contracted 58"
+2027-05-01,V005,C005,per_seat,58.0,114.95,6667.1,"seats = headcount x adoption 40%, min contracted 58"
+2027-06-01,V005,C005,per_seat,58.0,114.95,6667.1,"seats = headcount x adoption 40%, min contracted 58"
+2027-07-01,V005,C005,per_seat,58.0,114.95,6667.1,"seats = headcount x adoption 40%, min contracted 58"
+2027-08-01,V005,C005,per_seat,58.0,114.95,6667.1,"seats = headcount x adoption 40%, min contracted 58"
+2027-09-01,V005,C005,per_seat,58.0,114.95,6667.1,"seats = headcount x adoption 40%, min contracted 58"
+2027-10-01,V005,C005,per_seat,58.0,114.95,6667.1,"seats = headcount x adoption 40%, min contracted 58"
+2027-11-01,V005,C005,per_seat,58.0,114.95,6667.1,"seats = headcount x adoption 40%, min contracted 58"
+2026-12-01,V006,C006,per_seat,48.0,45.0,2160.0,"seats = headcount x adoption 90%, min contracted 48"
+2027-01-01,V006,C006,per_seat,48.0,45.0,2160.0,"seats = headcount x adoption 90%, min contracted 48"
+2027-02-01,V006,C006,per_seat,48.0,45.0,2160.0,"seats = headcount x adoption 90%, min contracted 48"
+2027-03-01,V006,C006,per_seat,48.0,45.0,2160.0,"seats = headcount x adoption 90%, min contracted 48"
+2027-04-01,V006,C006,per_seat,48.0,45.0,2160.0,"seats = headcount x adoption 90%, min contracted 48"
+2027-05-01,V006,C006,per_seat,48.0,45.0,2160.0,"seats = headcount x adoption 90%, min contracted 48"
+2027-06-01,V006,C006,per_seat,48.0,45.0,2160.0,"seats = headcount x adoption 90%, min contracted 48"
+2027-07-01,V006,C006,per_seat,48.0,45.0,2160.0,"seats = headcount x adoption 90%, min contracted 48"
+2027-08-01,V006,C006,per_seat,48.0,45.0,2160.0,"seats = headcount x adoption 90%, min contracted 48"
+2027-09-01,V006,C006,per_seat,48.0,45.0,2160.0,"seats = headcount x adoption 90%, min contracted 48"
+2027-10-01,V006,C006,per_seat,48.0,46.35,2224.8,"seats = headcount x adoption 90%, min contracted 48"
+2027-11-01,V006,C006,per_seat,48.0,46.35,2224.8,"seats = headcount x adoption 90%, min contracted 48"
+2026-12-01,V007,C007,per_seat,62.0,52.0,3224.0,"seats = headcount x adoption 60%, min contracted 62"
+2027-01-01,V007,C007,per_seat,62.0,52.0,3224.0,"seats = headcount x adoption 60%, min contracted 62"
+2027-02-01,V007,C007,per_seat,62.0,52.0,3224.0,"seats = headcount x adoption 60%, min contracted 62"
+2027-03-01,V007,C007,per_seat,62.0,52.0,3224.0,"seats = headcount x adoption 60%, min contracted 62"
+2027-04-01,V007,C007,per_seat,62.0,54.08,3352.96,"seats = headcount x adoption 60%, min contracted 62"
+2027-05-01,V007,C007,per_seat,62.0,54.08,3352.96,"seats = headcount x adoption 60%, min contracted 62"
+2027-06-01,V007,C007,per_seat,62.0,54.08,3352.96,"seats = headcount x adoption 60%, min contracted 62"
+2027-07-01,V007,C007,per_seat,62.0,54.08,3352.96,"seats = headcount x adoption 60%, min contracted 62"
+2027-08-01,V007,C007,per_seat,62.0,54.08,3352.96,"seats = headcount x adoption 60%, min contracted 62"
+2027-09-01,V007,C007,per_seat,62.0,54.08,3352.96,"seats = headcount x adoption 60%, min contracted 62"
+2027-10-01,V007,C007,per_seat,62.0,54.08,3352.96,"seats = headcount x adoption 60%, min contracted 62"
+2027-11-01,V007,C007,per_seat,62.0,54.08,3352.96,"seats = headcount x adoption 60%, min contracted 62"
+2026-12-01,V008,C008,per_seat,735.0,38.0,27930.0,"seats = headcount x adoption 98%, min contracted 735"
+2027-01-01,V008,C008,per_seat,735.0,38.0,27930.0,"seats = headcount x adoption 98%, min contracted 735"
+2027-02-01,V008,C008,per_seat,735.0,38.0,27930.0,"seats = headcount x adoption 98%, min contracted 735"
+2027-03-01,V008,C008,per_seat,735.0,39.33,28907.55,"seats = headcount x adoption 98%, min contracted 735"
+2027-04-01,V008,C008,per_seat,735.0,39.33,28907.55,"seats = headcount x adoption 98%, min contracted 735"
+2027-05-01,V008,C008,per_seat,735.0,39.33,28907.55,"seats = headcount x adoption 98%, min contracted 735"
+2027-06-01,V008,C008,per_seat,735.0,39.33,28907.55,"seats = headcount x adoption 98%, min contracted 735"
+2027-07-01,V008,C008,per_seat,735.0,39.33,28907.55,"seats = headcount x adoption 98%, min contracted 735"
+2027-08-01,V008,C008,per_seat,735.0,39.33,28907.55,"seats = headcount x adoption 98%, min contracted 735"
+2027-09-01,V008,C008,per_seat,735.0,39.33,28907.55,"seats = headcount x adoption 98%, min contracted 735"
+2027-10-01,V008,C008,per_seat,735.0,39.33,28907.55,"seats = headcount x adoption 98%, min contracted 735"
+2027-11-01,V008,C008,per_seat,735.0,39.33,28907.55,"seats = headcount x adoption 98%, min contracted 735"
+2026-12-01,V009,C009,per_seat,212.0,21.0,4452.0,"seats = headcount x adoption 95%, min contracted 212"
+2027-01-01,V009,C009,per_seat,212.0,21.0,4452.0,"seats = headcount x adoption 95%, min contracted 212"
+2027-02-01,V009,C009,per_seat,212.0,21.0,4452.0,"seats = headcount x adoption 95%, min contracted 212"
+2027-03-01,V009,C009,per_seat,212.0,21.0,4452.0,"seats = headcount x adoption 95%, min contracted 212"
+2027-04-01,V009,C009,per_seat,212.0,21.0,4452.0,"seats = headcount x adoption 95%, min contracted 212"
+2027-05-01,V009,C009,per_seat,212.0,21.0,4452.0,"seats = headcount x adoption 95%, min contracted 212"
+2027-06-01,V009,C009,per_seat,212.0,21.0,4452.0,"seats = headcount x adoption 95%, min contracted 212"
+2027-07-01,V009,C009,per_seat,212.0,21.0,4452.0,"seats = headcount x adoption 95%, min contracted 212"
+2027-08-01,V009,C009,per_seat,212.0,21.0,4452.0,"seats = headcount x adoption 95%, min contracted 212"
+2027-09-01,V009,C009,per_seat,212.0,21.0,4452.0,"seats = headcount x adoption 95%, min contracted 212"
+2027-10-01,V009,C009,per_seat,212.0,21.0,4452.0,"seats = headcount x adoption 95%, min contracted 212"
+2027-11-01,V009,C009,per_seat,212.0,21.0,4452.0,"seats = headcount x adoption 95%, min contracted 212"
+2026-12-01,V010,C010,per_seat,51.0,85.0,4335.0,"seats = headcount x adoption 50%, min contracted 51"
+2027-01-01,V010,C010,per_seat,51.0,85.0,4335.0,"seats = headcount x adoption 50%, min contracted 51"
+2027-02-01,V010,C010,per_seat,51.0,85.0,4335.0,"seats = headcount x adoption 50%, min contracted 51"
+2027-03-01,V010,C010,per_seat,51.0,85.0,4335.0,"seats = headcount x adoption 50%, min contracted 51"
+2027-04-01,V010,C010,per_seat,51.0,88.4,4508.4,"seats = headcount x adoption 50%, min contracted 51"
+2027-05-01,V010,C010,per_seat,51.0,88.4,4508.4,"seats = headcount x adoption 50%, min contracted 51"
+2027-06-01,V010,C010,per_seat,51.0,88.4,4508.4,"seats = headcount x adoption 50%, min contracted 51"
+2027-07-01,V010,C010,per_seat,51.0,88.4,4508.4,"seats = headcount x adoption 50%, min contracted 51"
+2027-08-01,V010,C010,per_seat,51.0,88.4,4508.4,"seats = headcount x adoption 50%, min contracted 51"
+2027-09-01,V010,C010,per_seat,51.0,88.4,4508.4,"seats = headcount x adoption 50%, min contracted 51"
+2027-10-01,V010,C010,per_seat,51.0,88.4,4508.4,"seats = headcount x adoption 50%, min contracted 51"
+2027-11-01,V010,C010,per_seat,51.0,88.4,4508.4,"seats = headcount x adoption 50%, min contracted 51"
+2026-12-01,V011,C011,per_seat,487.0,25.0,12175.0,"seats = headcount x adoption 60%, min contracted 487"
+2027-01-01,V011,C011,per_seat,487.0,25.0,12175.0,"seats = headcount x adoption 60%, min contracted 487"
+2027-02-01,V011,C011,per_seat,487.0,25.0,12175.0,"seats = headcount x adoption 60%, min contracted 487"
+2027-03-01,V011,C011,per_seat,487.0,25.0,12175.0,"seats = headcount x adoption 60%, min contracted 487"
+2027-04-01,V011,C011,per_seat,487.0,25.0,12175.0,"seats = headcount x adoption 60%, min contracted 487"
+2027-05-01,V011,C011,per_seat,487.0,25.0,12175.0,"seats = headcount x adoption 60%, min contracted 487"
+2027-06-01,V011,C011,per_seat,487.0,25.0,12175.0,"seats = headcount x adoption 60%, min contracted 487"
+2027-07-01,V011,C011,per_seat,487.0,25.0,12175.0,"seats = headcount x adoption 60%, min contracted 487"
+2027-08-01,V011,C011,per_seat,487.0,26.0,12662.0,"seats = headcount x adoption 60%, min contracted 487"
+2027-09-01,V011,C011,per_seat,487.0,26.0,12662.0,"seats = headcount x adoption 60%, min contracted 487"
+2027-10-01,V011,C011,per_seat,487.0,26.0,12662.0,"seats = headcount x adoption 60%, min contracted 487"
+2027-11-01,V011,C011,per_seat,487.0,26.0,12662.0,"seats = headcount x adoption 60%, min contracted 487"
+2026-12-01,V012,C012,per_seat,733.0,32.0,23456.0,"seats = headcount x adoption 100%, min contracted 733"
+2027-01-01,V012,C012,per_seat,733.0,32.0,23456.0,"seats = headcount x adoption 100%, min contracted 733"
+2027-02-01,V012,C012,per_seat,733.0,32.0,23456.0,"seats = headcount x adoption 100%, min contracted 733"
+2027-03-01,V012,C012,per_seat,733.0,32.0,23456.0,"seats = headcount x adoption 100%, min contracted 733"
+2027-04-01,V012,C012,per_seat,733.0,32.0,23456.0,"seats = headcount x adoption 100%, min contracted 733"
+2027-05-01,V012,C012,per_seat,733.0,32.0,23456.0,"seats = headcount x adoption 100%, min contracted 733"
+2027-06-01,V012,C012,per_seat,733.0,32.0,23456.0,"seats = headcount x adoption 100%, min contracted 733"
+2027-07-01,V012,C012,per_seat,733.0,32.0,23456.0,"seats = headcount x adoption 100%, min contracted 733"
+2027-08-01,V012,C012,per_seat,733.0,32.0,23456.0,"seats = headcount x adoption 100%, min contracted 733"
+2027-09-01,V012,C012,per_seat,733.0,32.0,23456.0,"seats = headcount x adoption 100%, min contracted 733"
+2027-10-01,V012,C012,per_seat,733.0,32.0,23456.0,"seats = headcount x adoption 100%, min contracted 733"
+2027-11-01,V012,C012,per_seat,733.0,32.0,23456.0,"seats = headcount x adoption 100%, min contracted 733"
+2026-12-01,V013,C013,per_seat,177.0,190.0,33630.0,"seats = headcount x adoption 90%, min contracted 177"
+2027-01-01,V013,C013,per_seat,177.0,190.0,33630.0,"seats = headcount x adoption 90%, min contracted 177"
+2027-02-01,V013,C013,per_seat,177.0,190.0,33630.0,"seats = headcount x adoption 90%, min contracted 177"
+2027-03-01,V013,C013,per_seat,177.0,197.6,34975.2,"seats = headcount x adoption 90%, min contracted 177"
+2027-04-01,V013,C013,per_seat,177.0,197.6,34975.2,"seats = headcount x adoption 90%, min contracted 177"
+2027-05-01,V013,C013,per_seat,177.0,197.6,34975.2,"seats = headcount x adoption 90%, min contracted 177"
+2027-06-01,V013,C013,per_seat,177.0,197.6,34975.2,"seats = headcount x adoption 90%, min contracted 177"
+2027-07-01,V013,C013,per_seat,177.0,197.6,34975.2,"seats = headcount x adoption 90%, min contracted 177"
+2027-08-01,V013,C013,per_seat,177.0,197.6,34975.2,"seats = headcount x adoption 90%, min contracted 177"
+2027-09-01,V013,C013,per_seat,177.0,197.6,34975.2,"seats = headcount x adoption 90%, min contracted 177"
+2027-10-01,V013,C013,per_seat,177.0,197.6,34975.2,"seats = headcount x adoption 90%, min contracted 177"
+2027-11-01,V013,C013,per_seat,177.0,197.6,34975.2,"seats = headcount x adoption 90%, min contracted 177"
+2026-12-01,V014,C014,per_seat,133.0,120.0,15960.0,"seats = headcount x adoption 90%, min contracted 133"
+2027-01-01,V014,C014,per_seat,133.0,120.0,15960.0,"seats = headcount x adoption 90%, min contracted 133"
+2027-02-01,V014,C014,per_seat,133.0,134.4,17875.2,"seats = headcount x adoption 90%, min contracted 133"
+2027-03-01,V014,C014,per_seat,133.0,134.4,17875.2,"seats = headcount x adoption 90%, min contracted 133"
+2027-04-01,V014,C014,per_seat,133.0,134.4,17875.2,"seats = headcount x adoption 90%, min contracted 133"
+2027-05-01,V014,C014,per_seat,133.0,134.4,17875.2,"seats = headcount x adoption 90%, min contracted 133"
+2027-06-01,V014,C014,per_seat,133.0,134.4,17875.2,"seats = headcount x adoption 90%, min contracted 133"
+2027-07-01,V014,C014,per_seat,133.0,134.4,17875.2,"seats = headcount x adoption 90%, min contracted 133"
+2027-08-01,V014,C014,per_seat,133.0,134.4,17875.2,"seats = headcount x adoption 90%, min contracted 133"
+2027-09-01,V014,C014,per_seat,133.0,134.4,17875.2,"seats = headcount x adoption 90%, min contracted 133"
+2027-10-01,V014,C014,per_seat,133.0,134.4,17875.2,"seats = headcount x adoption 90%, min contracted 133"
+2027-11-01,V014,C014,per_seat,133.0,134.4,17875.2,"seats = headcount x adoption 90%, min contracted 133"
+2026-12-01,V015,C015,per_seat,568.0,18.0,10224.0,"seats = headcount x adoption 10%, min contracted 568"
+2027-01-01,V015,C015,per_seat,568.0,18.0,10224.0,"seats = headcount x adoption 10%, min contracted 568"
+2027-02-01,V015,C015,per_seat,568.0,18.72,10632.96,"seats = headcount x adoption 10%, min contracted 568"
+2027-03-01,V015,C015,per_seat,568.0,18.72,10632.96,"seats = headcount x adoption 10%, min contracted 568"
+2027-04-01,V015,C015,per_seat,568.0,18.72,10632.96,"seats = headcount x adoption 10%, min contracted 568"
+2027-05-01,V015,C015,per_seat,568.0,18.72,10632.96,"seats = headcount x adoption 10%, min contracted 568"
+2027-06-01,V015,C015,per_seat,568.0,18.72,10632.96,"seats = headcount x adoption 10%, min contracted 568"
+2027-07-01,V015,C015,per_seat,568.0,18.72,10632.96,"seats = headcount x adoption 10%, min contracted 568"
+2027-08-01,V015,C015,per_seat,568.0,18.72,10632.96,"seats = headcount x adoption 10%, min contracted 568"
+2027-09-01,V015,C015,per_seat,568.0,18.72,10632.96,"seats = headcount x adoption 10%, min contracted 568"
+2027-10-01,V015,C015,per_seat,568.0,18.72,10632.96,"seats = headcount x adoption 10%, min contracted 568"
+2027-11-01,V015,C015,per_seat,568.0,18.72,10632.96,"seats = headcount x adoption 10%, min contracted 568"
+2026-12-01,V016,C016,per_seat,749.0,102.25,76585.25,"seats = headcount x adoption 101%, min contracted 749"
+2027-01-01,V016,C016,per_seat,749.0,102.25,76585.25,"seats = headcount x adoption 101%, min contracted 749"
+2027-02-01,V016,C016,per_seat,749.0,102.25,76585.25,"seats = headcount x adoption 101%, min contracted 749"
+2027-03-01,V016,C016,per_seat,749.0,102.25,76585.25,"seats = headcount x adoption 101%, min contracted 749"
+2027-04-01,V016,C016,per_seat,749.0,106.34,79648.66,"seats = headcount x adoption 101%, min contracted 749"
+2027-05-01,V016,C016,per_seat,749.0,106.34,79648.66,"seats = headcount x adoption 101%, min contracted 749"
+2027-06-01,V016,C016,per_seat,749.0,106.34,79648.66,"seats = headcount x adoption 101%, min contracted 749"
+2027-07-01,V016,C016,per_seat,749.0,106.34,79648.66,"seats = headcount x adoption 101%, min contracted 749"
+2027-08-01,V016,C016,per_seat,749.0,106.34,79648.66,"seats = headcount x adoption 101%, min contracted 749"
+2027-09-01,V016,C016,per_seat,749.0,106.34,79648.66,"seats = headcount x adoption 101%, min contracted 749"
+2027-10-01,V016,C016,per_seat,749.0,106.34,79648.66,"seats = headcount x adoption 101%, min contracted 749"
+2027-11-01,V016,C016,per_seat,749.0,106.34,79648.66,"seats = headcount x adoption 101%, min contracted 749"
+2026-12-01,V017,C017,per_seat,74.0,60.0,4440.0,"seats = headcount x adoption 70%, min contracted 74"
+2027-01-01,V017,C017,per_seat,74.0,60.0,4440.0,"seats = headcount x adoption 70%, min contracted 74"
+2027-02-01,V017,C017,per_seat,74.0,60.0,4440.0,"seats = headcount x adoption 70%, min contracted 74"
+2027-03-01,V017,C017,per_seat,74.0,60.0,4440.0,"seats = headcount x adoption 70%, min contracted 74"
+2027-04-01,V017,C017,per_seat,74.0,61.8,4573.2,"seats = headcount x adoption 70%, min contracted 74"
+2027-05-01,V017,C017,per_seat,74.0,61.8,4573.2,"seats = headcount x adoption 70%, min contracted 74"
+2027-06-01,V017,C017,per_seat,74.0,61.8,4573.2,"seats = headcount x adoption 70%, min contracted 74"
+2027-07-01,V017,C017,per_seat,74.0,61.8,4573.2,"seats = headcount x adoption 70%, min contracted 74"
+2027-08-01,V017,C017,per_seat,74.0,61.8,4573.2,"seats = headcount x adoption 70%, min contracted 74"
+2027-09-01,V017,C017,per_seat,74.0,61.8,4573.2,"seats = headcount x adoption 70%, min contracted 74"
+2027-10-01,V017,C017,per_seat,74.0,61.8,4573.2,"seats = headcount x adoption 70%, min contracted 74"
+2027-11-01,V017,C017,per_seat,74.0,61.8,4573.2,"seats = headcount x adoption 70%, min contracted 74"
+2026-12-01,V018,C018,per_seat,620.0,22.0,13640.0,"seats = headcount x adoption 30%, min contracted 620"
+2027-01-01,V018,C018,per_seat,620.0,22.0,13640.0,"seats = headcount x adoption 30%, min contracted 620"
+2027-02-01,V018,C018,per_seat,620.0,22.0,13640.0,"seats = headcount x adoption 30%, min contracted 620"
+2027-03-01,V018,C018,per_seat,620.0,22.0,13640.0,"seats = headcount x adoption 30%, min contracted 620"
+2027-04-01,V018,C018,per_seat,620.0,22.88,14185.6,"seats = headcount x adoption 30%, min contracted 620"
+2027-05-01,V018,C018,per_seat,620.0,22.88,14185.6,"seats = headcount x adoption 30%, min contracted 620"
+2027-06-01,V018,C018,per_seat,620.0,22.88,14185.6,"seats = headcount x adoption 30%, min contracted 620"
+2027-07-01,V018,C018,per_seat,620.0,22.88,14185.6,"seats = headcount x adoption 30%, min contracted 620"
+2027-08-01,V018,C018,per_seat,620.0,22.88,14185.6,"seats = headcount x adoption 30%, min contracted 620"
+2027-09-01,V018,C018,per_seat,620.0,22.88,14185.6,"seats = headcount x adoption 30%, min contracted 620"
+2027-10-01,V018,C018,per_seat,620.0,22.88,14185.6,"seats = headcount x adoption 30%, min contracted 620"
+2027-11-01,V018,C018,per_seat,620.0,22.88,14185.6,"seats = headcount x adoption 30%, min contracted 620"
+2026-12-01,V019,C019,per_seat,75.0,140.0,10500.0,"seats = headcount x adoption 90%, min contracted 75"
+2027-01-01,V019,C019,per_seat,75.0,140.0,10500.0,"seats = headcount x adoption 90%, min contracted 75"
+2027-02-01,V019,C019,per_seat,75.0,140.0,10500.0,"seats = headcount x adoption 90%, min contracted 75"
+2027-03-01,V019,C019,per_seat,75.0,140.0,10500.0,"seats = headcount x adoption 90%, min contracted 75"
+2027-04-01,V019,C019,per_seat,75.0,152.6,11445.0,"seats = headcount x adoption 90%, min contracted 75"
+2027-05-01,V019,C019,per_seat,75.0,152.6,11445.0,"seats = headcount x adoption 90%, min contracted 75"
+2027-06-01,V019,C019,per_seat,75.0,152.6,11445.0,"seats = headcount x adoption 90%, min contracted 75"
+2027-07-01,V019,C019,per_seat,75.0,152.6,11445.0,"seats = headcount x adoption 90%, min contracted 75"
+2027-08-01,V019,C019,per_seat,75.0,152.6,11445.0,"seats = headcount x adoption 90%, min contracted 75"
+2027-09-01,V019,C019,per_seat,75.0,152.6,11445.0,"seats = headcount x adoption 90%, min contracted 75"
+2027-10-01,V019,C019,per_seat,75.0,152.6,11445.0,"seats = headcount x adoption 90%, min contracted 75"
+2027-11-01,V019,C019,per_seat,75.0,152.6,11445.0,"seats = headcount x adoption 90%, min contracted 75"
+2026-12-01,V020,C020,per_seat,83.0,95.0,7885.0,"seats = headcount x adoption 100%, min contracted 83"
+2027-01-01,V020,C020,per_seat,83.0,95.0,7885.0,"seats = headcount x adoption 100%, min contracted 83"
+2027-02-01,V020,C020,per_seat,83.0,95.0,7885.0,"seats = headcount x adoption 100%, min contracted 83"
+2027-03-01,V020,C020,per_seat,83.0,95.0,7885.0,"seats = headcount x adoption 100%, min contracted 83"
+2027-04-01,V020,C020,per_seat,83.0,99.275,8239.82,"seats = headcount x adoption 100%, min contracted 83"
+2027-05-01,V020,C020,per_seat,83.0,99.275,8239.82,"seats = headcount x adoption 100%, min contracted 83"
+2027-06-01,V020,C020,per_seat,83.0,99.275,8239.82,"seats = headcount x adoption 100%, min contracted 83"
+2027-07-01,V020,C020,per_seat,83.0,99.275,8239.82,"seats = headcount x adoption 100%, min contracted 83"
+2027-08-01,V020,C020,per_seat,83.0,99.275,8239.82,"seats = headcount x adoption 100%, min contracted 83"
+2027-09-01,V020,C020,per_seat,83.0,99.275,8239.82,"seats = headcount x adoption 100%, min contracted 83"
+2027-10-01,V020,C020,per_seat,83.0,99.275,8239.82,"seats = headcount x adoption 100%, min contracted 83"
+2027-11-01,V020,C020,per_seat,83.0,99.275,8239.82,"seats = headcount x adoption 100%, min contracted 83"
+2026-12-01,V021,C021,per_seat,149.0,110.0,16390.0,"seats = headcount x adoption 60%, min contracted 149"
+2027-01-01,V021,C021,per_seat,149.0,110.0,16390.0,"seats = headcount x adoption 60%, min contracted 149"
+2027-02-01,V021,C021,per_seat,149.0,110.0,16390.0,"seats = headcount x adoption 60%, min contracted 149"
+2027-03-01,V021,C021,per_seat,149.0,110.0,16390.0,"seats = headcount x adoption 60%, min contracted 149"
+2027-04-01,V021,C021,per_seat,149.0,110.0,16390.0,"seats = headcount x adoption 60%, min contracted 149"
+2027-05-01,V021,C021,per_seat,149.0,114.4,17045.6,"seats = headcount x adoption 60%, min contracted 149"
+2027-06-01,V021,C021,per_seat,149.0,114.4,17045.6,"seats = headcount x adoption 60%, min contracted 149"
+2027-07-01,V021,C021,per_seat,149.0,114.4,17045.6,"seats = headcount x adoption 60%, min contracted 149"
+2027-08-01,V021,C021,per_seat,149.0,114.4,17045.6,"seats = headcount x adoption 60%, min contracted 149"
+2027-09-01,V021,C021,per_seat,149.0,114.4,17045.6,"seats = headcount x adoption 60%, min contracted 149"
+2027-10-01,V021,C021,per_seat,149.0,114.4,17045.6,"seats = headcount x adoption 60%, min contracted 149"
+2027-11-01,V021,C021,per_seat,149.0,114.4,17045.6,"seats = headcount x adoption 60%, min contracted 149"
+2026-12-01,V023,C023,usage,17345.49,18.5,320891.48,6-month trend x seasonal index
+2027-01-01,V023,C023,usage,16823.99,18.5,311243.79,6-month trend x seasonal index
+2027-02-01,V023,C023,usage,17477.65,18.5,323336.55,6-month trend x seasonal index
+2027-03-01,V023,C023,usage,18011.54,18.5,333213.54,6-month trend x seasonal index
+2027-04-01,V023,C023,usage,19162.41,18.5,354504.6,6-month trend x seasonal index
+2027-05-01,V023,C023,usage,18927.77,18.5,350163.75,6-month trend x seasonal index
+2027-06-01,V023,C023,usage,20632.68,19.24,396972.76,6-month trend x seasonal index
+2027-07-01,V023,C023,usage,22379.05,19.24,430572.84,6-month trend x seasonal index
+2027-08-01,V023,C023,usage,23964.68,19.24,461080.37,6-month trend x seasonal index
+2027-09-01,V023,C023,usage,21963.75,19.24,422582.57,6-month trend x seasonal index
+2027-10-01,V023,C023,usage,22597.37,19.24,434773.35,6-month trend x seasonal index
+2027-11-01,V023,C023,usage,23102.17,19.24,444485.77,6-month trend x seasonal index
+2026-12-01,V024,C024,usage,212596.5,0.12,25511.58,6-month trend x seasonal index
+2027-01-01,V024,C024,usage,225213.65,0.12,27025.64,6-month trend x seasonal index
+2027-02-01,V024,C024,usage,234495.28,0.12,28139.43,6-month trend x seasonal index
+2027-03-01,V024,C024,usage,227206.71,0.12,27264.8,6-month trend x seasonal index
+2027-04-01,V024,C024,usage,256177.53,0.12,30741.3,6-month trend x seasonal index
+2027-05-01,V024,C024,usage,229802.13,0.1248,28679.31,6-month trend x seasonal index
+2027-06-01,V024,C024,usage,231419.99,0.1248,28881.21,6-month trend x seasonal index
+2027-07-01,V024,C024,usage,255020.25,0.1248,31826.53,6-month trend x seasonal index
+2027-08-01,V024,C024,usage,246397.06,0.1248,30750.35,6-month trend x seasonal index
+2027-09-01,V024,C024,usage,256931.2,0.1248,32065.01,6-month trend x seasonal index
+2027-10-01,V024,C024,usage,249936.95,0.1248,31192.13,6-month trend x seasonal index
+2027-11-01,V024,C024,usage,256901.05,0.1248,32061.25,6-month trend x seasonal index
+2026-12-01,V025,C025,usage,72463.76,0.35,25362.31,6-month trend x seasonal index
+2027-01-01,V025,C025,usage,79734.95,0.35,27907.23,6-month trend x seasonal index
+2027-02-01,V025,C025,usage,82641.37,0.35,28924.48,6-month trend x seasonal index
+2027-03-01,V025,C025,usage,80599.08,0.35,28209.68,6-month trend x seasonal index
+2027-04-01,V025,C025,usage,90315.93,0.35,31610.58,6-month trend x seasonal index
+2027-05-01,V025,C025,usage,83452.13,0.35,29208.24,6-month trend x seasonal index
+2027-06-01,V025,C025,usage,90508.64,0.35,31678.02,6-month trend x seasonal index
+2027-07-01,V025,C025,usage,90852.83,0.35,31798.49,6-month trend x seasonal index
+2027-08-01,V025,C025,usage,91722.99,0.35,32103.05,6-month trend x seasonal index
+2027-09-01,V025,C025,usage,98230.88,0.364,35756.04,6-month trend x seasonal index
+2027-10-01,V025,C025,usage,97503.0,0.364,35491.09,6-month trend x seasonal index
+2027-11-01,V025,C025,usage,96795.58,0.364,35233.59,6-month trend x seasonal index
+2026-12-01,V026,C026,usage,4363.05,42.0,183247.95,6-month trend x seasonal index
+2027-01-01,V026,C026,usage,4532.95,42.0,190383.92,6-month trend x seasonal index
+2027-02-01,V026,C026,usage,4496.09,42.0,188835.83,6-month trend x seasonal index
+2027-03-01,V026,C026,usage,4727.34,42.0,198548.45,6-month trend x seasonal index
+2027-04-01,V026,C026,usage,4616.43,42.0,193890.11,6-month trend x seasonal index
+2027-05-01,V026,C026,usage,4854.87,42.0,203904.38,6-month trend x seasonal index
+2027-06-01,V026,C026,usage,5156.75,43.68,225246.92,6-month trend x seasonal index
+2027-07-01,V026,C026,usage,5356.61,43.68,233976.85,6-month trend x seasonal index
+2027-08-01,V026,C026,usage,5175.81,43.68,226079.36,6-month trend x seasonal index
+2027-09-01,V026,C026,usage,5478.31,43.68,239292.64,6-month trend x seasonal index
+2027-10-01,V026,C026,usage,5758.09,43.68,251513.32,6-month trend x seasonal index
+2027-11-01,V026,C026,usage,5778.69,43.68,252413.28,6-month trend x seasonal index
+2026-12-01,V027,C027,usage,3324.61,32.0,106387.42,6-month trend x seasonal index
+2027-01-01,V027,C027,usage,1718.7,32.0,54998.41,6-month trend x seasonal index
+2027-02-01,V027,C027,usage,1737.22,32.0,55591.17,6-month trend x seasonal index
+2027-03-01,V027,C027,usage,3473.73,32.0,111159.26,6-month trend x seasonal index
+2027-04-01,V027,C027,usage,1683.04,32.0,53857.41,6-month trend x seasonal index
+2027-05-01,V027,C027,usage,1743.07,32.0,55778.27,6-month trend x seasonal index
+2027-06-01,V027,C027,usage,1822.0,33.28,60636.09,6-month trend x seasonal index
+2027-07-01,V027,C027,usage,1878.05,33.28,62501.46,6-month trend x seasonal index
+2027-08-01,V027,C027,usage,1855.76,33.28,61759.77,6-month trend x seasonal index
+2027-09-01,V027,C027,usage,1741.85,33.28,57968.82,6-month trend x seasonal index
+2027-10-01,V027,C027,usage,1812.55,33.28,60321.8,6-month trend x seasonal index
+2027-11-01,V027,C027,usage,3064.61,33.28,101990.31,6-month trend x seasonal index
+2026-12-01,V028,C028,usage,44071.55,3.8,167471.89,6-month trend x seasonal index
+2027-01-01,V028,C028,usage,23077.02,3.8,87692.67,6-month trend x seasonal index
+2027-02-01,V028,C028,usage,25210.01,3.8,95798.04,6-month trend x seasonal index
+2027-03-01,V028,C028,usage,44289.38,3.8,168299.63,6-month trend x seasonal index
+2027-04-01,V028,C028,usage,25623.82,3.8,97370.51,6-month trend x seasonal index
+2027-05-01,V028,C028,usage,25278.64,3.8,96058.82,6-month trend x seasonal index
+2027-06-01,V028,C028,usage,27120.57,3.8,103058.18,6-month trend x seasonal index
+2027-07-01,V028,C028,usage,27456.9,3.8,104336.2,6-month trend x seasonal index
+2027-08-01,V028,C028,usage,26380.56,3.8,100246.12,6-month trend x seasonal index
+2027-09-01,V028,C028,usage,27599.05,3.8,104876.39,6-month trend x seasonal index
+2027-10-01,V028,C028,usage,26304.98,3.8,99958.92,6-month trend x seasonal index
+2027-11-01,V028,C028,usage,46212.06,3.952,182630.06,6-month trend x seasonal index
+2026-12-01,V029,C029,usage,1056.86,45.0,47558.74,6-month trend x seasonal index
+2027-01-01,V029,C029,usage,597.83,45.0,26902.29,6-month trend x seasonal index
+2027-02-01,V029,C029,usage,601.76,45.0,27079.38,6-month trend x seasonal index
+2027-03-01,V029,C029,usage,1119.46,45.0,50375.53,6-month trend x seasonal index
+2027-04-01,V029,C029,usage,641.84,45.0,28882.84,6-month trend x seasonal index
+2027-05-01,V029,C029,usage,568.31,45.0,25574.16,6-month trend x seasonal index
+2027-06-01,V029,C029,usage,595.51,45.0,26798.1,6-month trend x seasonal index
+2027-07-01,V029,C029,usage,633.69,45.0,28516.2,6-month trend x seasonal index
+2027-08-01,V029,C029,usage,671.7,45.0,30226.44,6-month trend x seasonal index
+2027-09-01,V029,C029,usage,618.27,45.0,27822.25,6-month trend x seasonal index
+2027-10-01,V029,C029,usage,597.02,46.8,27940.42,6-month trend x seasonal index
+2027-11-01,V029,C029,usage,1078.76,46.8,50485.92,6-month trend x seasonal index
+2026-12-01,V030,C030,fixed,1.0,30000.0,30000.0,annual value / 12
+2027-01-01,V030,C030,fixed,1.0,30000.0,30000.0,annual value / 12
+2027-02-01,V030,C030,fixed,1.0,30000.0,30000.0,annual value / 12
+2027-03-01,V030,C030,fixed,1.0,30000.0,30000.0,annual value / 12
+2027-04-01,V030,C030,fixed,1.0,30000.0,30000.0,annual value / 12
+2027-05-01,V030,C030,fixed,1.0,30000.0,30000.0,annual value / 12
+2027-06-01,V030,C030,fixed,1.0,30000.0,30000.0,annual value / 12
+2027-07-01,V030,C030,fixed,1.0,31200.0,31200.0,annual value / 12
+2027-08-01,V030,C030,fixed,1.0,31200.0,31200.0,annual value / 12
+2027-09-01,V030,C030,fixed,1.0,31200.0,31200.0,annual value / 12
+2027-10-01,V030,C030,fixed,1.0,31200.0,31200.0,annual value / 12
+2027-11-01,V030,C030,fixed,1.0,31200.0,31200.0,annual value / 12
+2026-12-01,V031,C031,usage,1710.25,120.0,205229.8,6-month trend x seasonal index
+2027-01-01,V031,C031,usage,935.12,120.0,112214.34,6-month trend x seasonal index
+2027-02-01,V031,C031,usage,944.16,120.0,113299.48,6-month trend x seasonal index
+2027-03-01,V031,C031,usage,1664.48,120.0,199738.17,6-month trend x seasonal index
+2027-04-01,V031,C031,usage,930.05,120.0,111606.1,6-month trend x seasonal index
+2027-05-01,V031,C031,usage,975.48,120.0,117058.12,6-month trend x seasonal index
+2027-06-01,V031,C031,usage,958.89,124.8,119669.34,6-month trend x seasonal index
+2027-07-01,V031,C031,usage,990.57,124.8,123622.99,6-month trend x seasonal index
+2027-08-01,V031,C031,usage,982.98,124.8,122676.41,6-month trend x seasonal index
+2027-09-01,V031,C031,usage,965.92,124.8,120547.11,6-month trend x seasonal index
+2027-10-01,V031,C031,usage,915.98,124.8,114314.23,6-month trend x seasonal index
+2027-11-01,V031,C031,usage,1768.91,124.8,220759.88,6-month trend x seasonal index
+2026-12-01,V032,C032,fixed,1.0,40000.0,40000.0,annual value / 12
+2027-01-01,V032,C032,fixed,1.0,40000.0,40000.0,annual value / 12
+2027-02-01,V032,C032,fixed,1.0,40000.0,40000.0,annual value / 12
+2027-03-01,V032,C032,fixed,1.0,40000.0,40000.0,annual value / 12
+2027-04-01,V032,C032,fixed,1.0,40000.0,40000.0,annual value / 12
+2027-05-01,V032,C032,fixed,1.0,40000.0,40000.0,annual value / 12
+2027-06-01,V032,C032,fixed,1.0,40000.0,40000.0,annual value / 12
+2027-07-01,V032,C032,fixed,1.0,40000.0,40000.0,annual value / 12
+2027-08-01,V032,C032,fixed,1.0,40000.0,40000.0,annual value / 12
+2027-09-01,V032,C032,fixed,1.0,41600.0,41600.0,annual value / 12
+2027-10-01,V032,C032,fixed,1.0,41600.0,41600.0,annual value / 12
+2027-11-01,V032,C032,fixed,1.0,41600.0,41600.0,annual value / 12
+2026-12-01,V033,C033,fixed,1.0,35000.0,35000.0,annual value / 12
+2027-01-01,V033,C033,fixed,1.0,35000.0,35000.0,annual value / 12
+2027-02-01,V033,C033,fixed,1.0,35000.0,35000.0,annual value / 12
+2027-03-01,V033,C033,fixed,1.0,35000.0,35000.0,annual value / 12
+2027-04-01,V033,C033,fixed,1.0,35000.0,35000.0,annual value / 12
+2027-05-01,V033,C033,fixed,1.0,35000.0,35000.0,annual value / 12
+2027-06-01,V033,C033,fixed,1.0,35000.0,35000.0,annual value / 12
+2027-07-01,V033,C033,fixed,1.0,35000.0,35000.0,annual value / 12
+2027-08-01,V033,C033,fixed,1.0,35000.0,35000.0,annual value / 12
+2027-09-01,V033,C033,fixed,1.0,35000.0,35000.0,annual value / 12
+2027-10-01,V033,C033,fixed,1.0,35000.0,35000.0,annual value / 12
+2027-11-01,V033,C033,fixed,1.0,35000.0,35000.0,annual value / 12
+2026-12-01,V034,C034,fixed,1.0,15000.0,15000.0,annual value / 12
+2027-01-01,V034,C034,fixed,1.0,15000.0,15000.0,annual value / 12
+2027-02-01,V034,C034,fixed,1.0,15000.0,15000.0,annual value / 12
+2027-03-01,V034,C034,fixed,1.0,15000.0,15000.0,annual value / 12
+2027-04-01,V034,C034,fixed,1.0,15000.0,15000.0,annual value / 12
+2027-05-01,V034,C034,fixed,1.0,15000.0,15000.0,annual value / 12
+2027-06-01,V034,C034,fixed,1.0,15000.0,15000.0,annual value / 12
+2027-07-01,V034,C034,fixed,1.0,15600.0,15600.0,annual value / 12
+2027-08-01,V034,C034,fixed,1.0,15600.0,15600.0,annual value / 12
+2027-09-01,V034,C034,fixed,1.0,15600.0,15600.0,annual value / 12
+2027-10-01,V034,C034,fixed,1.0,15600.0,15600.0,annual value / 12
+2027-11-01,V034,C034,fixed,1.0,15600.0,15600.0,annual value / 12
+2026-12-01,V035,C035,fixed,1.0,20000.0,20000.0,annual value / 12
+2027-01-01,V035,C035,fixed,1.0,20000.0,20000.0,annual value / 12
+2027-02-01,V035,C035,fixed,1.0,20800.0,20800.0,annual value / 12
+2027-03-01,V035,C035,fixed,1.0,20800.0,20800.0,annual value / 12
+2027-04-01,V035,C035,fixed,1.0,20800.0,20800.0,annual value / 12
+2027-05-01,V035,C035,fixed,1.0,20800.0,20800.0,annual value / 12
+2027-06-01,V035,C035,fixed,1.0,20800.0,20800.0,annual value / 12
+2027-07-01,V035,C035,fixed,1.0,20800.0,20800.0,annual value / 12
+2027-08-01,V035,C035,fixed,1.0,20800.0,20800.0,annual value / 12
+2027-09-01,V035,C035,fixed,1.0,20800.0,20800.0,annual value / 12
+2027-10-01,V035,C035,fixed,1.0,20800.0,20800.0,annual value / 12
+2027-11-01,V035,C035,fixed,1.0,20800.0,20800.0,annual value / 12
+2026-12-01,V036,C036,fixed,1.0,12500.0,12500.0,annual value / 12
+2027-01-01,V036,C036,fixed,1.0,12500.0,12500.0,annual value / 12
+2027-02-01,V036,C036,fixed,1.0,12500.0,12500.0,annual value / 12
+2027-03-01,V036,C036,fixed,1.0,12500.0,12500.0,annual value / 12
+2027-04-01,V036,C036,fixed,1.0,12500.0,12500.0,annual value / 12
+2027-05-01,V036,C036,fixed,1.0,12500.0,12500.0,annual value / 12
+2027-06-01,V036,C036,fixed,1.0,12500.0,12500.0,annual value / 12
+2027-07-01,V036,C036,fixed,1.0,12500.0,12500.0,annual value / 12
+2027-08-01,V036,C036,fixed,1.0,12500.0,12500.0,annual value / 12
+2027-09-01,V036,C036,fixed,1.0,12500.0,12500.0,annual value / 12
+2027-10-01,V036,C036,fixed,1.0,13000.0,13000.0,annual value / 12
+2027-11-01,V036,C036,fixed,1.0,13000.0,13000.0,annual value / 12
+2026-12-01,V037,C037,per_seat,726.0,28.0,20328.0,"seats = headcount x adoption 100%, min contracted 726"
+2027-01-01,V037,C037,per_seat,726.0,28.0,20328.0,"seats = headcount x adoption 100%, min contracted 726"
+2027-02-01,V037,C037,per_seat,726.0,28.0,20328.0,"seats = headcount x adoption 100%, min contracted 726"
+2027-03-01,V037,C037,per_seat,726.0,28.0,20328.0,"seats = headcount x adoption 100%, min contracted 726"
+2027-04-01,V037,C037,per_seat,726.0,28.0,20328.0,"seats = headcount x adoption 100%, min contracted 726"
+2027-05-01,V037,C037,per_seat,726.0,28.0,20328.0,"seats = headcount x adoption 100%, min contracted 726"
+2027-06-01,V037,C037,per_seat,726.0,28.0,20328.0,"seats = headcount x adoption 100%, min contracted 726"
+2027-07-01,V037,C037,per_seat,726.0,28.0,20328.0,"seats = headcount x adoption 100%, min contracted 726"
+2027-08-01,V037,C037,per_seat,726.0,29.26,21242.76,"seats = headcount x adoption 100%, min contracted 726"
+2027-09-01,V037,C037,per_seat,726.0,29.26,21242.76,"seats = headcount x adoption 100%, min contracted 726"
+2027-10-01,V037,C037,per_seat,726.0,29.26,21242.76,"seats = headcount x adoption 100%, min contracted 726"
+2027-11-01,V037,C037,per_seat,728.0,29.26,21301.28,"seats = headcount x adoption 100%, min contracted 726"
+2026-12-01,V038,C038,usage,36569.89,2.9,106052.69,6-month trend x seasonal index
+2027-01-01,V038,C038,usage,34035.27,2.9,98702.29,6-month trend x seasonal index
+2027-02-01,V038,C038,usage,33712.39,2.9,97765.93,6-month trend x seasonal index
+2027-03-01,V038,C038,usage,32495.85,2.9,94237.97,6-month trend x seasonal index
+2027-04-01,V038,C038,usage,34311.21,2.9,99502.51,6-month trend x seasonal index
+2027-05-01,V038,C038,usage,34651.47,2.9,100489.28,6-month trend x seasonal index
+2027-06-01,V038,C038,usage,34075.61,2.9,98819.27,6-month trend x seasonal index
+2027-07-01,V038,C038,usage,32308.36,2.9,93694.24,6-month trend x seasonal index
+2027-08-01,V038,C038,usage,34149.19,2.9,99032.64,6-month trend x seasonal index
+2027-09-01,V038,C038,usage,33504.12,3.016,101048.41,6-month trend x seasonal index
+2027-10-01,V038,C038,usage,32561.67,3.016,98206.01,6-month trend x seasonal index
+2027-11-01,V038,C038,usage,34347.5,3.016,103592.06,6-month trend x seasonal index
+2026-12-01,V039,C039,usage,950.57,55.0,52281.56,6-month trend x seasonal index
+2027-01-01,V039,C039,usage,863.66,55.0,47501.28,6-month trend x seasonal index
+2027-02-01,V039,C039,usage,980.86,55.0,53947.19,6-month trend x seasonal index
+2027-03-01,V039,C039,usage,890.59,55.0,48982.36,6-month trend x seasonal index
+2027-04-01,V039,C039,usage,897.08,55.0,49339.39,6-month trend x seasonal index
+2027-05-01,V039,C039,usage,879.71,55.0,48383.88,6-month trend x seasonal index
+2027-06-01,V039,C039,usage,875.05,55.0,48127.76,6-month trend x seasonal index
+2027-07-01,V039,C039,usage,911.2,55.0,50115.76,6-month trend x seasonal index
+2027-08-01,V039,C039,usage,941.86,57.2,53874.23,6-month trend x seasonal index
+2027-09-01,V039,C039,usage,937.24,57.2,53610.03,6-month trend x seasonal index
+2027-10-01,V039,C039,usage,912.58,57.2,52199.37,6-month trend x seasonal index
+2027-11-01,V039,C039,usage,898.92,57.2,51418.06,6-month trend x seasonal index
+2026-12-01,V040,C040,usage,57998.38,1.6,92797.41,6-month trend x seasonal index
+2027-01-01,V040,C040,usage,54336.04,1.6,86937.67,6-month trend x seasonal index
+2027-02-01,V040,C040,usage,55961.11,1.6,89537.78,6-month trend x seasonal index
+2027-03-01,V040,C040,usage,60081.39,1.6,96130.23,6-month trend x seasonal index
+2027-04-01,V040,C040,usage,59044.0,1.6,94470.41,6-month trend x seasonal index
+2027-05-01,V040,C040,usage,58534.17,1.6,93654.66,6-month trend x seasonal index
+2027-06-01,V040,C040,usage,57783.21,1.6,92453.14,6-month trend x seasonal index
+2027-07-01,V040,C040,usage,59625.82,1.6,95401.32,6-month trend x seasonal index
+2027-08-01,V040,C040,usage,58241.7,1.6,93186.71,6-month trend x seasonal index
+2027-09-01,V040,C040,usage,59474.23,1.6,95158.77,6-month trend x seasonal index
+2027-10-01,V040,C040,usage,61872.04,1.664,102955.07,6-month trend x seasonal index
+2027-11-01,V040,C040,usage,61361.17,1.664,102104.99,6-month trend x seasonal index
