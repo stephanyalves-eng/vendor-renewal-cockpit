@@ -159,5 +159,7 @@ Same seed, same output: the test suite checks that the data and the CSV files ar
 - **Benchmarks are list prices.** Enterprise buyers usually pay below list, so "above benchmark" is a prompt
   to ask questions, not proof of overpaying. Prices were read from pages that may vary by region.
 - **IPCA and FX are scenario assumptions** in `config.yaml`, not official figures.
-- **The SQL views have not yet run against a live Postgres.** Column names and order are tested against the
-  CSVs, and the same figures are computed and tested in Python.
+- **The schema was checked once by hand on Supabase (Postgres 17), not in CI.** It applied cleanly, and the
+  views returned the same figures as Python to the cent. Not every row was loaded: the small tables went in
+  whole, and the spend, budget and forecast files were spot-checked. The automated tests check columns
+  against the CSVs.
