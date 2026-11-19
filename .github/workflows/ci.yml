@@ -20,7 +20,7 @@ jobs:
       PGUSER: postgres
       PGPASSWORD: postgres
       PGDATABASE: postgres
-      PG_VIEWS_DIR: ${{ runner.temp }}/pg_views
+      PG_VIEWS_DIR: /tmp/pg_views
     steps:
       - uses: actions/checkout@v4
 
