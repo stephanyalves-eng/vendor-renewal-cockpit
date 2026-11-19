@@ -139,10 +139,25 @@ The export writes:
 - `data/supabase/`: the same files without the comment line, ready for Postgres `COPY`.
 - `data/contracts/`: three sample contract PDFs.
 
-To load the database, run `sql/schema.sql` in Supabase, then import the files from `data/supabase/`
-in the order the tables are created.
+To load the database, run `sql/schema.sql`, then `sql/load.sql` with `psql` from the repository root. In
+the Supabase dashboard, you can instead import the files from `data/supabase/` in the order the tables are
+created.
 
 Same seed, same output: the test suite checks that the data and the CSV files are byte-for-byte reproducible.
+
+**Database check.** [scripts/pg_check.sh](scripts/pg_check.sh) builds the database in a real Postgres from
+`schema.sql` and loads every row of every CSV. It then saves the three views to files, and
+[tests/test_postgres.py](tests/test_postgres.py) checks them against the Python figures to the cent.
+GitHub Actions runs it on every push, against Postgres 17
+([.github/workflows/ci.yml](.github/workflows/ci.yml)). The same workflow fails if the committed CSVs no
+longer match a fresh export. Locally the check is skipped unless `PG_VIEWS_DIR` is set; set it and run:
+
+```powershell
+bash scripts/pg_check.sh
+```
+
+The script reads the standard `PG*` connection variables and drops only the cockpit's own tables and views
+before rebuilding.
 
 ## Limitations
 
@@ -159,7 +174,6 @@ Same seed, same output: the test suite checks that the data and the CSV files ar
 - **Benchmarks are list prices.** Enterprise buyers usually pay below list, so "above benchmark" is a prompt
   to ask questions, not proof of overpaying. Prices were read from pages that may vary by region.
 - **IPCA and FX are scenario assumptions** in `config.yaml`, not official figures.
-- **The schema was checked once by hand on Supabase (Postgres 17), not in CI.** It applied cleanly, and the
-  views returned the same figures as Python to the cent. Not every row was loaded: the small tables went in
-  whole, and the spend, budget and forecast files were spot-checked. The automated tests check columns
-  against the CSVs.
+- **The views are checked on plain Postgres 17, not on a Supabase project in CI.** Supabase-specific behaviour,
+  such as the read policies for the `anon` role, was checked once by hand on Supabase: the schema applied
+  cleanly and the security advisor flagged nothing.
