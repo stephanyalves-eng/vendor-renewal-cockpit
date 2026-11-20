@@ -20,6 +20,8 @@ do $$ declare n int; begin
     perform 1 from savings limit 1;
     perform 1 from vendors limit 1;
     perform 1 from contract_extractions limit 1;
+    perform 1 from v_kpis_by_category limit 1;
+    perform 1 from v_variance_monthly limit 1;
     begin
         perform 1 from app_admins;
         raise exception 'FAIL: anon can read app_admins';

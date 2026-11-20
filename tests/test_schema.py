@@ -11,7 +11,8 @@ SCHEMA = (ROOT / "sql" / "schema.sql").read_text(encoding="utf-8")
 NOT_COLUMNS = ("primary", "foreign", "unique", "check", "constraint")
 APP_TABLES = ["contract_extractions", "app_admins"]  # written by the app, not loaded from CSV
 VIEWS = ["v_fy_landing", "v_fy_landing_by_category", "v_renewals_due", "v_kpis", "v_monthly_trend",
-         "v_variance_waterfall", "v_seat_utilization", "v_vendor_detail"]
+         "v_variance_waterfall", "v_seat_utilization", "v_vendor_detail", "v_kpis_by_category",
+         "v_variance_monthly"]
 
 
 def table_columns(sql: str) -> dict[str, list[str]]:
@@ -74,3 +75,16 @@ def test_supabase_policies_grant_reads_explicitly():
     policies = (ROOT / "sql" / "supabase_policies.sql").read_text(encoding="utf-8").lower()
     assert "grant select on all tables in schema public to anon, authenticated, service_role" in policies
     assert "grant execute on function is_app_admin() to authenticated" in policies
+
+
+def test_patches_match_schema_and_grant_reads():
+    """A patch must not drift from schema.sql, and must grant reads (new Supabase projects need it)."""
+    for patch in sorted((ROOT / "sql" / "patches").glob("*.sql")):
+        text = patch.read_text(encoding="utf-8")
+        for view in re.findall(r"create or replace view (\w+) ", text):
+            start = text.index(f"create or replace view {view} ")
+            end = text.index(";", start) + 1
+            block = text[start:end]
+            assert block in SCHEMA, f"{patch.name}: {view} differs from schema.sql"
+            grant = re.compile("grant select on [^;]*" + re.escape(view) + "[,; ][^;]*to anon")
+            assert grant.search(text), f"{patch.name}: no read grant for {view}"

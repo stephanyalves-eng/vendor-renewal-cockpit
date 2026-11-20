@@ -113,7 +113,7 @@ config.yaml → generate → forecast → variance ─┐
 | Recommend | [src/recommend.py](src/recommend.py) | Terminate → consolidate → right-size → renegotiate → renew, first match wins, with a decision deadline |
 | Contracts | [src/contracts_pdf.py](src/contracts_pdf.py) | Three sample contract PDFs for the front end's AI intake demo |
 | Export | [src/export.py](src/export.py) | Runs everything, writes CSVs and PDFs |
-| Schema | [sql/schema.sql](sql/schema.sql) | Tables plus one view per front-end need: `v_kpis`, `v_fy_landing`, `v_fy_landing_by_category`, `v_monthly_trend`, `v_variance_waterfall`, `v_renewals_due`, `v_vendor_detail`, `v_seat_utilization` |
+| Schema | [sql/schema.sql](sql/schema.sql) | Tables plus one view per front-end need: `v_kpis`, `v_kpis_by_category`, `v_fy_landing`, `v_fy_landing_by_category`, `v_monthly_trend`, `v_variance_waterfall`, `v_variance_monthly`, `v_renewals_due`, `v_vendor_detail`, `v_seat_utilization`. Existing databases get new views from [sql/patches/](sql/patches) |
 | Access | [sql/supabase_policies.sql](sql/supabase_policies.sql) | Supabase only: visitors read; only listed admins can change a contract status or store a contract extraction |
 
 Every rule is explained in plain business language in [docs/methodology.md](docs/methodology.md). All

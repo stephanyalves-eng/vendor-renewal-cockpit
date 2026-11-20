@@ -11,8 +11,8 @@ PSQL=(psql -X -q -v ON_ERROR_STOP=1)
 export PGOPTIONS="-c client_min_messages=warning"
 
 # Start clean so the script can be re-run: drop only the cockpit's own objects, nothing else.
-"${PSQL[@]}" -c "drop view if exists v_vendor_detail, v_seat_utilization, v_variance_waterfall,
-    v_monthly_trend, v_kpis, v_renewals_due, v_fy_landing_by_category, v_fy_landing;
+"${PSQL[@]}" -c "drop view if exists v_variance_monthly, v_kpis_by_category, v_vendor_detail, v_seat_utilization,
+    v_variance_waterfall, v_monthly_trend, v_kpis, v_renewals_due, v_fy_landing_by_category, v_fy_landing;
   drop table if exists contract_extractions, app_admins, recommendations, variance, forecast_monthly,
     savings, benchmarks, headcount, budget, monthly_spend, contracts, vendors, scenario;
   drop function if exists is_app_admin();"
@@ -22,10 +22,12 @@ export PGOPTIONS="-c client_min_messages=warning"
 # Supabase write rules, tested against stand-ins for Supabase's roles and auth.uid().
 "${PSQL[@]}" -f scripts/ci_supabase_stubs.sql
 "${PSQL[@]}" -f sql/supabase_policies.sql
+# Patches for databases created before a view existed: must apply cleanly on top of the full schema.
+for patch in sql/patches/*.sql; do "${PSQL[@]}" -f "$patch"; done
 psql -X -v ON_ERROR_STOP=1 -f scripts/ci_policy_check.sql | grep "Policy check"
 
 VIEWS=(v_fy_landing v_fy_landing_by_category v_renewals_due v_kpis v_monthly_trend
-       v_variance_waterfall v_seat_utilization v_vendor_detail)
+       v_variance_waterfall v_seat_utilization v_vendor_detail v_kpis_by_category v_variance_monthly)
 for view in "${VIEWS[@]}"; do
   "${PSQL[@]}" -c "\copy (select * from $view) to '$OUT/$view.csv' with (format csv, header true)"
 done

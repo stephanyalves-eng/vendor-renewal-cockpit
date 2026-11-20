@@ -129,3 +129,67 @@ def test_vendor_detail_matches_python(py, cfg):
     assert d["rule_explanation"].notna().all()
     rec = py["recommendations"].set_index("contract_id")
     assert (d.loc[rec.index, "rule_explanation"] == rec["rationale"]).all()
+
+
+# --- views for the interactive Overview and Budget vs. actual -----------------------------------
+
+KPI_COLS = ["fy_landing", "fy_budget", "landing_vs_budget", "savings_ytd", "cost_avoidance_ytd",
+            "renewals_next_90_days", "urgent_decisions", "value_at_risk_auto_renewal", "recommended_annual_impact"]
+
+
+def test_kpis_by_category_add_up_to_overall_kpis():
+    by_cat = view("v_kpis_by_category")
+    total = view("v_kpis").iloc[0]
+    assert len(by_cat) == 5
+    for col in KPI_COLS:
+        assert by_cat[col].sum() == pytest.approx(total[col], abs=0.05), col
+
+
+def test_kpis_by_category_match_python(py):
+    k = view("v_kpis_by_category").set_index("category")
+    ref = py["fy_landing_by_category"].set_index("category")
+    for col in ("landing_vs_budget",):
+        assert (k[col] - ref[col]).abs().max() <= 0.01
+    assert (k["fy_landing"] - ref["landing"]).abs().max() <= 0.01
+    assert (k["landing_vs_budget_pct"] - ref["landing_vs_budget_pct"]).abs().max() < 1e-6
+    sav = py["savings"].merge(py["vendors"][["vendor_id", "category"]], on="vendor_id")
+    for t, col in (("saving", "savings_ytd"), ("cost_avoidance", "cost_avoidance_ytd")):
+        ref_t = sav[sav["type"] == t].groupby("category")["annualized_impact"].sum().reindex(k.index).fillna(0)
+        assert (k[col] - ref_t).abs().max() <= 0.01, col
+    assert k.loc["Professional services", "savings_ytd"] == 0       # a real zero, not missing
+    rec = py["recommendations"]
+    assert (k["urgent_decisions"] == rec[rec["urgent"]].groupby("category").size().reindex(k.index).fillna(0)).all()
+
+
+def test_monthly_variance_reconciles_every_row_to_the_cent():
+    m = view("v_variance_monthly")
+    cents = lambda s: (s * 100).round().astype("int64")
+    assert (cents(m["budget"]) + cents(m["price"]) + cents(m["volume"]) + cents(m["unbudgeted"]) == cents(m["landing"])).all()
+
+
+def test_monthly_variance_adds_up_to_waterfall():
+    m = view("v_variance_monthly")
+    w = view("v_variance_waterfall")
+    keys = ["scope", "category", "owner_department"]
+    cols = ["budget", "price", "volume", "unbudgeted", "landing"]
+    a = m.groupby(keys)[cols].sum().sort_index()
+    b = w.groupby(keys)[cols].sum().sort_index()
+    assert list(a.index) == list(b.index)
+    assert (a - b).abs().max().max() <= 0.01
+
+
+def test_monthly_variance_months_and_forecast_flag(cfg):
+    m = view("v_variance_monthly")
+    m["month"] = pd.to_datetime(m["month"])
+    fy = m[m["scope"] == "fy_landing"]
+    assert sorted(fy["month"].dt.month.unique()) == list(range(1, 13))
+    assert sorted(m[m["scope"] == "ytd"]["month"].dt.month.unique()) == list(range(1, 12))
+    anchor = pd.Timestamp(cfg["scenario"]["anchor_date"])
+    flag = m["is_forecast"].astype(str).str.lower().isin(["t", "true"])
+    assert (flag == (m["month"] > anchor)).all()
+    # closed months are identical in both scopes
+    keys = ["month", "category", "owner_department"]
+    cols = ["budget", "price", "volume", "unbudgeted", "landing"]
+    y = m[m["scope"] == "ytd"].set_index(keys)[cols].sort_index()
+    f = fy[fy["month"] <= anchor].set_index(keys)[cols].sort_index()
+    assert (y - f.loc[y.index]).abs().max().max() == 0
