@@ -14,6 +14,8 @@ questions a procurement lead gets asked every month:
 2. **Which contracts need a decision before they auto-renew?** By when, and what should we do with each one?
 3. **Where can we cut or consolidate spend?** How much is each action worth?
 
+**Live demo:** https://stephanyalves-eng-renewal-cockpit.stephany-alves.workers.dev
+
 This repository is the data and logic layer. It produces the tables and SQL views that the web front end
 ([renewal-cockpit](https://github.com/stephanyalves-eng/renewal-cockpit)) and a weekly alert e-mail
 read from. The technical specification it was built against is in [SPEC.md](SPEC.md) (in Portuguese).
