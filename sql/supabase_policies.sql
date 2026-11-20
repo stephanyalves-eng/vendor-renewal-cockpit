@@ -6,6 +6,12 @@
 --   insert into app_admins (user_id) values ('<your auth user id>');
 -- Never commit that id. Consider turning off public sign-ups in Supabase Auth settings.
 
+-- Reads. New Supabase projects do not expose tables created outside the dashboard to the Data API,
+-- so SELECT must be granted explicitly. Row level security still decides which rows each role sees.
+grant usage on schema public to anon, authenticated, service_role;
+grant select on all tables in schema public to anon, authenticated, service_role;  -- includes views
+revoke select on app_admins from anon;                                             -- admins list is private
+
 create policy "admins read own row" on app_admins
     for select to authenticated using (user_id = auth.uid());
 
@@ -14,6 +20,7 @@ create or replace function is_app_admin() returns boolean
 as $$
     select exists (select 1 from app_admins where user_id = auth.uid())
 $$;
+grant execute on function is_app_admin() to authenticated;  -- used inside the write policies
 
 -- No writes for anyone by default (Supabase grants them to anon and authenticated otherwise).
 revoke insert, update, delete, truncate on all tables in schema public from anon, authenticated;

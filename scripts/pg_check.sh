@@ -14,7 +14,8 @@ export PGOPTIONS="-c client_min_messages=warning"
 "${PSQL[@]}" -c "drop view if exists v_vendor_detail, v_seat_utilization, v_variance_waterfall,
     v_monthly_trend, v_kpis, v_renewals_due, v_fy_landing_by_category, v_fy_landing;
   drop table if exists contract_extractions, app_admins, recommendations, variance, forecast_monthly,
-    savings, benchmarks, headcount, budget, monthly_spend, contracts, vendors, scenario;"
+    savings, benchmarks, headcount, budget, monthly_spend, contracts, vendors, scenario;
+  drop function if exists is_app_admin();"
 "${PSQL[@]}" -f sql/schema.sql
 "${PSQL[@]}" -f sql/load.sql
 

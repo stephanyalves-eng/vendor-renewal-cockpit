@@ -65,5 +65,12 @@ def test_supabase_policies_never_grant_anon_writes():
     policies = (ROOT / "sql" / "supabase_policies.sql").read_text(encoding="utf-8").lower()
     assert "revoke insert, update, delete, truncate on all tables in schema public from anon, authenticated" in policies
     for line in policies.splitlines():
-        if line.startswith("grant"):
-            assert "anon" not in line, line
+        if line.startswith("grant") and "anon" in line:
+            assert line.startswith(("grant usage on schema", "grant select on")), line
+
+
+def test_supabase_policies_grant_reads_explicitly():
+    """New Supabase projects do not expose psql-created tables to the API: reads must be granted."""
+    policies = (ROOT / "sql" / "supabase_policies.sql").read_text(encoding="utf-8").lower()
+    assert "grant select on all tables in schema public to anon, authenticated, service_role" in policies
+    assert "grant execute on function is_app_admin() to authenticated" in policies
