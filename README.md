@@ -14,9 +14,9 @@ questions a procurement lead gets asked every month:
 2. **Which contracts need a decision before they auto-renew?** By when, and what should we do with each one?
 3. **Where can we cut or consolidate spend?** How much is each action worth?
 
-This repository is the data and logic layer. It produces the tables and SQL views that a web front end
-and a weekly alert e-mail read from. The technical specification it was built against is in
-[SPEC.md](SPEC.md) (in Portuguese).
+This repository is the data and logic layer. It produces the tables and SQL views that the web front end
+([renewal-cockpit](https://github.com/stephanyalves-eng/renewal-cockpit)) and a weekly alert e-mail
+read from. The technical specification it was built against is in [SPEC.md](SPEC.md) (in Portuguese).
 
 ## Key findings from the synthetic run
 
@@ -147,8 +147,10 @@ To load the database, run `sql/schema.sql`, then `sql/load.sql` with `psql` from
 on Supabase also `sql/supabase_policies.sql`. In the Supabase dashboard, you can instead import the files
 from `data/supabase/` in the order the tables are created.
 
-The front end is built in Lovable from the prompts in [docs/lovable/](docs/lovable/README.md), which also
-explain how the public demo is kept from spending credits.
+The front end lives in [renewal-cockpit](https://github.com/stephanyalves-eng/renewal-cockpit). Its
+shell, Overview and Renewals were generated in Lovable from the prompts in
+[docs/lovable/](docs/lovable/README.md), which also explain how the public demo is kept from spending
+credits; the other pages were written directly in that repository.
 
 Same seed, same output: the test suite checks that the data and the CSV files are byte-for-byte reproducible.
 
