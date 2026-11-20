@@ -1,0 +1,136 @@
+{
+  "name": "Database keep-alive",
+  "type": "SHARED",
+  "summary": "",
+  "description": "",
+  "tags": [],
+  "blogUrl": "",
+  "metadata": {
+    "externalId": "7qGh9lyqEmHTNmj5HY6HI"
+  },
+  "author": "Stephany doe",
+  "categories": [],
+  "pieces": [
+    "@activepieces/piece-schedule",
+    "@activepieces/piece-http"
+  ],
+  "flows": [
+    {
+      "displayName": "Database keep-alive",
+      "trigger": {
+        "name": "trigger",
+        "valid": true,
+        "displayName": "Expressão Cron",
+        "nextAction": {
+          "name": "step_1",
+          "skip": false,
+          "type": "PIECE",
+          "valid": true,
+          "settings": {
+            "input": {
+              "url": "https://ttcuicsbmujzpztexelw.supabase.co/rest/v1/scenario?select=anchor_date",
+              "body": {},
+              "method": "GET",
+              "headers": {
+                "apikey": "sb_publishable_TTlrktQPupv9-baWbq7KBQ_zV7ts9Or"
+              },
+              "authType": "NONE",
+              "body_type": "none",
+              "use_proxy": false,
+              "authFields": {},
+              "failureMode": "continue_none",
+              "queryParams": {},
+              "proxy_settings": {},
+              "followRedirects": false,
+              "response_is_binary": false
+            },
+            "pieceName": "@activepieces/piece-http",
+            "actionName": "send_request",
+            "sampleData": {},
+            "pieceVersion": "0.13.3",
+            "propertySettings": {
+              "url": {
+                "type": "MANUAL"
+              },
+              "body": {
+                "type": "MANUAL",
+                "schema": {}
+              },
+              "method": {
+                "type": "MANUAL"
+              },
+              "headers": {
+                "type": "MANUAL"
+              },
+              "timeout": {
+                "type": "MANUAL"
+              },
+              "authType": {
+                "type": "MANUAL"
+              },
+              "body_type": {
+                "type": "MANUAL"
+              },
+              "use_proxy": {
+                "type": "MANUAL"
+              },
+              "authFields": {
+                "type": "MANUAL",
+                "schema": {}
+              },
+              "failureMode": {
+                "type": "MANUAL"
+              },
+              "queryParams": {
+                "type": "MANUAL"
+              },
+              "proxy_settings": {
+                "type": "MANUAL"
+              },
+              "followRedirects": {
+                "type": "MANUAL"
+              },
+              "response_is_binary": {
+                "type": "MANUAL"
+              }
+            },
+            "errorHandlingOptions": {
+              "retryOnFailure": {
+                "value": false
+              },
+              "continueOnFailure": {
+                "value": false
+              }
+            }
+          },
+          "displayName": "Enviar solicitação HTTP",
+          "lastUpdatedDate": "2026-11-20T22:20:02.143Z"
+        },
+        "lastUpdatedDate": "2026-11-20T22:20:02.280Z",
+        "type": "PIECE_TRIGGER",
+        "settings": {
+          "sampleData": {},
+          "propertySettings": {
+            "timezone": {
+              "type": "MANUAL"
+            },
+            "cronExpression": {
+              "type": "MANUAL"
+            }
+          },
+          "pieceName": "@activepieces/piece-schedule",
+          "pieceVersion": "0.1.22",
+          "triggerName": "cron_expression",
+          "input": {
+            "timezone": "America/Sao_Paulo",
+            "cronExpression": "0 8 * * 4"
+          }
+        }
+      },
+      "valid": true,
+      "schemaVersion": "28",
+      "notes": []
+    }
+  ],
+  "status": "PUBLISHED"
+}

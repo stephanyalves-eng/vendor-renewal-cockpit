@@ -119,6 +119,15 @@ config.yaml → generate → forecast → variance ─┐
 Every rule is explained in plain business language in [docs/methodology.md](docs/methodology.md). All
 thresholds, the scenario date, the seed and the IPCA rate live in [config.yaml](config.yaml).
 
+## Weekly renewal alert
+
+Every Monday at 08:00 (São Paulo) an Activepieces flow reads `v_renewals_due` with the public key and
+e-mails the contracts whose decision deadline is within 30 days; nothing is sent when the list is empty.
+A second flow reads the database on Thursdays so the free Supabase project never pauses. Setup, the
+tested e-mail step and both exported flows are in [automation/](automation/README.md).
+
+![Renewal alert flow in Activepieces](automation/renewal-alert.png)
+
 ## How to reproduce
 
 Requires Python 3.11.

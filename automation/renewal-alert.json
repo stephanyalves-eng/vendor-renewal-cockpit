@@ -1,0 +1,271 @@
+{
+  "name": "Renewal decisions due",
+  "type": "SHARED",
+  "summary": "",
+  "description": "",
+  "tags": [],
+  "blogUrl": "",
+  "metadata": {
+    "externalId": "2Y1Uhd5ffcuCpSfiwFc88"
+  },
+  "author": "Stephany doe",
+  "categories": [],
+  "pieces": [
+    "@activepieces/piece-schedule",
+    "@activepieces/piece-http",
+    "@activepieces/piece-gmail"
+  ],
+  "flows": [
+    {
+      "displayName": "Renewal decisions due",
+      "trigger": {
+        "name": "trigger",
+        "valid": true,
+        "displayName": "Expressão Cron",
+        "nextAction": {
+          "name": "step_1",
+          "skip": false,
+          "type": "PIECE",
+          "valid": true,
+          "settings": {
+            "input": {
+              "url": "https://ttcuicsbmujzpztexelw.supabase.co/rest/v1/v_renewals_due?select=vendor_name,category,decision_deadline,days_to_deadline,recommendation,estimated_annual_impact,auto_renew&days_to_deadline=lte.30&order=decision_deadline.asc",
+              "body": {},
+              "method": "GET",
+              "headers": {
+                "apikey": "sb_publishable_TTlrktQPupv9-baWbq7KBQ_zV7ts9Or"
+              },
+              "authType": "NONE",
+              "body_type": "none",
+              "use_proxy": false,
+              "authFields": {},
+              "failureMode": "continue_none",
+              "queryParams": {},
+              "proxy_settings": {},
+              "followRedirects": false,
+              "response_is_binary": false
+            },
+            "pieceName": "@activepieces/piece-http",
+            "actionName": "send_request",
+            "sampleData": {},
+            "pieceVersion": "0.13.3",
+            "propertySettings": {
+              "url": {
+                "type": "MANUAL"
+              },
+              "body": {
+                "type": "MANUAL",
+                "schema": {}
+              },
+              "method": {
+                "type": "MANUAL"
+              },
+              "headers": {
+                "type": "MANUAL"
+              },
+              "timeout": {
+                "type": "MANUAL"
+              },
+              "authType": {
+                "type": "MANUAL"
+              },
+              "body_type": {
+                "type": "MANUAL"
+              },
+              "use_proxy": {
+                "type": "MANUAL"
+              },
+              "authFields": {
+                "type": "MANUAL",
+                "schema": {}
+              },
+              "failureMode": {
+                "type": "MANUAL"
+              },
+              "queryParams": {
+                "type": "MANUAL"
+              },
+              "proxy_settings": {
+                "type": "MANUAL"
+              },
+              "followRedirects": {
+                "type": "MANUAL"
+              },
+              "response_is_binary": {
+                "type": "MANUAL"
+              }
+            },
+            "errorHandlingOptions": {
+              "retryOnFailure": {
+                "value": false
+              },
+              "continueOnFailure": {
+                "value": false
+              }
+            }
+          },
+          "nextAction": {
+            "name": "step_2",
+            "skip": false,
+            "type": "CODE",
+            "valid": true,
+            "settings": {
+              "input": {
+                "rows": "{{step_1['output']['body']}}"
+              },
+              "useDeno": true,
+              "sampleData": {},
+              "sourceCode": {
+                "code": "// Activepieces \"Code\" step for the weekly renewal alert.\n// Input `rows`: the JSON body returned by the HTTP step (v_renewals_due, deadline within 30 days).\n// Output: { send, subject, html, text }. The flow sends the e-mail only when `send` is true.\nexport const code = async (inputs) => {\n  let rows = inputs.rows;\n  if (typeof rows === \"string\") rows = JSON.parse(rows || \"[]\");\n  if (!Array.isArray(rows)) rows = [];\n\n  const brl = (n) => \"BRL \" + Number(n).toLocaleString(\"en-US\", { maximumFractionDigits: 0 });\n  const date = (iso) => {\n    const [y, m, d] = String(iso).slice(0, 10).split(\"-\");\n    const months = [\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\", \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\"];\n    return `${Number(d)} ${months[Number(m) - 1]} ${y}`;\n  };\n  const esc = (s) => String(s).replace(/[&<>\"]/g, (c) => ({ \"&\": \"&amp;\", \"<\": \"&lt;\", \">\": \"&gt;\", '\"': \"&quot;\" }[c]));\n\n  const sorted = [...rows].sort((a, b) => String(a.decision_deadline).localeCompare(String(b.decision_deadline)));\n  const subject = `Renewal decisions due: ${sorted.length} contract${sorted.length === 1 ? \"\" : \"s\"}`;\n  const site = \"https://stephanyalves-eng-renewal-cockpit.stephany-alves.workers.dev/renewals\";\n\n  const cell = 'style=\"padding:6px 10px;border-bottom:1px solid #e5e1d6;text-align:left\"';\n  const right = 'style=\"padding:6px 10px;border-bottom:1px solid #e5e1d6;text-align:right\"';\n  const body = sorted\n    .map((r) => `<tr><td ${cell}>${esc(r.vendor_name)}</td><td ${cell}>${date(r.decision_deadline)} (${r.days_to_deadline} days)</td><td ${cell}>${esc(r.recommendation)}${r.auto_renew ? \" · auto-renews\" : \"\"}</td><td ${right}>${brl(r.estimated_annual_impact)}</td></tr>`)\n    .join(\"\");\n  const html = `<div style=\"font-family:Arial,sans-serif;color:#1d2b28\">\n<p><strong>${esc(subject)}</strong> (synthetic data, scenario date 30 Nov 2026)</p>\n<table style=\"border-collapse:collapse;font-size:14px\">\n<thead><tr><th ${cell}>Vendor</th><th ${cell}>Decision deadline</th><th ${cell}>Recommendation</th><th ${right}>Est. annual impact</th></tr></thead>\n<tbody>${body}</tbody></table>\n<p><a href=\"${site}\">Open the Renewals page</a></p></div>`;\n  const text = [subject, ...sorted.map((r) => `- ${r.vendor_name}: decide by ${date(r.decision_deadline)}, ${r.recommendation}, ${brl(r.estimated_annual_impact)}`), site].join(\"\\n\");\n\n  return { send: sorted.length > 0, subject, html, text };\n};\n",
+                "packageJson": "{}"
+              },
+              "errorHandlingOptions": {
+                "retryOnFailure": {
+                  "value": false
+                },
+                "continueOnFailure": {
+                  "value": false
+                }
+              }
+            },
+            "nextAction": {
+              "name": "step_3",
+              "skip": false,
+              "type": "ROUTER",
+              "valid": true,
+              "children": [
+                {
+                  "name": "step_4",
+                  "skip": false,
+                  "type": "PIECE",
+                  "valid": true,
+                  "settings": {
+                    "input": {
+                      "cc": [],
+                      "bcc": [],
+                      "auth": "{{connections['gmail']}}",
+                      "body": "<p>{{step_2['output']['html']}}{{step_2['output']['text']}}</p>",
+                      "draft": false,
+                      "subject": "{{step_2['output']['subject']}}",
+                      "receiver": [
+                        "you@example.com"
+                      ],
+                      "reply_to": [],
+                      "body_type": "html",
+                      "attachments": []
+                    },
+                    "pieceName": "@activepieces/piece-gmail",
+                    "actionName": "send_email",
+                    "sampleData": {},
+                    "pieceVersion": "0.19.0",
+                    "propertySettings": {
+                      "cc": {
+                        "type": "MANUAL"
+                      },
+                      "bcc": {
+                        "type": "MANUAL"
+                      },
+                      "body": {
+                        "type": "MANUAL"
+                      },
+                      "from": {
+                        "type": "MANUAL"
+                      },
+                      "draft": {
+                        "type": "MANUAL"
+                      },
+                      "subject": {
+                        "type": "MANUAL"
+                      },
+                      "receiver": {
+                        "type": "MANUAL"
+                      },
+                      "reply_to": {
+                        "type": "MANUAL"
+                      },
+                      "body_type": {
+                        "type": "MANUAL"
+                      },
+                      "attachments": {
+                        "type": "MANUAL"
+                      },
+                      "in_reply_to": {
+                        "type": "MANUAL"
+                      },
+                      "sender_name": {
+                        "type": "MANUAL"
+                      }
+                    },
+                    "errorHandlingOptions": {
+                      "retryOnFailure": {
+                        "value": false
+                      },
+                      "continueOnFailure": {
+                        "value": false
+                      }
+                    }
+                  },
+                  "displayName": "Enviar e-mail",
+                  "lastUpdatedDate": "2026-11-20T22:21:56.102Z"
+                },
+                null
+              ],
+              "settings": {
+                "branches": [
+                  {
+                    "branchName": "Email",
+                    "branchType": "CONDITION",
+                    "conditions": [
+                      [
+                        {
+                          "operator": "BOOLEAN_IS_TRUE",
+                          "firstValue": "{{step_2['output']['send']}}"
+                        }
+                      ]
+                    ]
+                  },
+                  {
+                    "branchName": "Otherwise",
+                    "branchType": "FALLBACK"
+                  }
+                ],
+                "sampleData": {},
+                "executionType": "EXECUTE_FIRST_MATCH"
+              },
+              "displayName": "Roteador",
+              "lastUpdatedDate": "2026-11-20T22:21:56.097Z"
+            },
+            "displayName": "Código",
+            "lastUpdatedDate": "2026-11-20T22:21:56.097Z"
+          },
+          "displayName": "Enviar solicitação HTTP",
+          "lastUpdatedDate": "2026-11-20T22:21:56.096Z"
+        },
+        "lastUpdatedDate": "2026-11-20T22:22:11.959Z",
+        "type": "PIECE_TRIGGER",
+        "settings": {
+          "sampleData": {},
+          "propertySettings": {
+            "timezone": {
+              "type": "MANUAL"
+            },
+            "cronExpression": {
+              "type": "MANUAL"
+            }
+          },
+          "pieceName": "@activepieces/piece-schedule",
+          "pieceVersion": "0.1.22",
+          "triggerName": "cron_expression",
+          "input": {
+            "timezone": "America/Sao_Paulo",
+            "cronExpression": "0 8 * * 1"
+          }
+        }
+      },
+      "valid": true,
+      "schemaVersion": "28",
+      "notes": []
+    }
+  ],
+  "status": "PUBLISHED"
+}
