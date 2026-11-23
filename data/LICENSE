@@ -1,0 +1,18 @@
+The synthetic data in this folder (data/processed, data/supabase and data/contracts) is
+licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+
+Copyright (c) 2026 Stephany Alves
+
+You may share and adapt the data for any purpose, including commercially, as long as you give
+appropriate credit, provide a link to the license, and indicate if changes were made.
+
+Suggested credit: Stephany Alves, "Vendor Spend & Renewal Cockpit: synthetic procurement data",
+https://github.com/stephanyalves-eng/vendor-renewal-cockpit, CC BY 4.0.
+
+Full license text: https://creativecommons.org/licenses/by/4.0/legalcode
+Summary: https://creativecommons.org/licenses/by/4.0/
+
+The vendors, company and figures are fictional. The public list prices in
+data/reference/public_list_prices.csv and benchmarks.csv are facts published by the vendors
+named there, recorded with their source URL and date; they are included for reference and are
+not covered by this license.

@@ -209,3 +209,7 @@ before rebuilding.
 - **The views are checked on plain Postgres 17, not on a Supabase project in CI.** Supabase-specific behaviour,
   such as the read policies for the `anon` role, was checked once by hand on Supabase: the schema applied
   cleanly and the security advisor flagged nothing.
+
+## License
+
+Code: [MIT](LICENSE). Synthetic data in `data/`: [CC BY 4.0](data/LICENSE), credit "Stephany Alves, Vendor Spend & Renewal Cockpit". The public list prices in the benchmarks are facts published by the vendors named in them and are not covered by either license.
