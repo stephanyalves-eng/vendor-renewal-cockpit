@@ -1,5 +1,7 @@
 # Vendor Spend & Renewal Cockpit
 
+**Companion repository:** [Web app and dashboard](https://github.com/stephanyalves-eng/renewal-cockpit) · The frontend for exploring spend, budget variance and contract renewals.
+
 [![tests](https://github.com/stephanyalves-eng/vendor-renewal-cockpit/actions/workflows/ci.yml/badge.svg)](https://github.com/stephanyalves-eng/vendor-renewal-cockpit/actions/workflows/ci.yml)
 
 > **Synthetic data.** Everything in this repository describes a fictional fintech and fictional
@@ -17,8 +19,7 @@ questions a procurement lead gets asked every month:
 **Live demo:** https://stephanyalves-eng-renewal-cockpit.stephany-alves.workers.dev
 
 This repository is the data and logic layer. It produces the tables and SQL views that the web front end
-([renewal-cockpit](https://github.com/stephanyalves-eng/renewal-cockpit)) and a weekly alert e-mail
-read from. The technical specification it was built against is in [SPEC.md](SPEC.md) (in Portuguese).
+and a weekly alert e-mail read from. The technical specification it was built against is in [SPEC.md](SPEC.md) (in Portuguese).
 
 ## Screenshots
 
